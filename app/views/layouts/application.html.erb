@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DnInternTeamilk</title>
+    <title><%= full_title yield :title %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
+
+    <%= stylesheet_link_tag "bootstrap.min.css" %>
+    <%= stylesheet_link_tag "font-awesome.min.css" %>
+    <%= stylesheet_link_tag "elegant-icons.css" %>
+    <%= stylesheet_link_tag "nice-select.css" %>
+    <%= stylesheet_link_tag "jquery-ui.min.css" %>
+    <%= stylesheet_link_tag "owl.carousel.min.css" %>
+    <%= stylesheet_link_tag "slicknav.min.css" %>
+    <%= stylesheet_link_tag "style.css" %>
   </head>
 
   <body>
+    <%= render "layouts/header" %>
     <%= yield %>
+    <%= render "layouts/footer" %>
   </body>
 </html>

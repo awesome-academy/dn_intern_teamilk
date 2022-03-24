@@ -1,0 +1,52 @@
+<footer class="footer spad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="footer__about">
+          <div class="footer__about__logo">
+            <%= link_to image_tag("img/logo.png"), root_path %>
+          </div>
+          <ul>
+            <li><%= t "footer.address" %></li>
+            <li><%= t "footer.phone" %></li>
+            <li><%= t "footer.email" %></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+        <div class="footer__widget">
+          <h6><%= t "footer.Useful_Links" %></h6>
+          <ul>
+            <li><%= link_to t("footer.About_Us"), root_path %></li>
+            <li><%= link_to t("footer.Delivery_infom"), root_path %></li>
+            <li><%= link_to t("footer.Privacy_Policy"), root_path %></li>
+          </ul>
+          <ul>
+            <li><%= link_to t("footer.About_Our_Shop"), root_path %></li>
+            <li><%= link_to t("footer.Projects"), root_path %></li>
+            <li><%= link_to t("footer.Contact"), root_path %></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-12">
+        <div class="footer__widget">
+          <h6><%= t "footer.join_now" %></h6>
+          <div class="footer__widget__social">
+            <%= link_to (root_path) do %>
+              <i class="fa fa-facebook"></i>
+            <% end %>
+            <%= link_to (root_path) do %>
+              <i class="fa fa-twitter"></i>
+            <% end %>
+            <%= link_to (root_path) do %>
+              <i class="fa fa-linkedin"></i>
+            <% end %>
+            <%= link_to (root_path) do %>
+              <i class="fa fa-pinterest-p"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
