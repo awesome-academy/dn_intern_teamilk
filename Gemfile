@@ -40,3 +40,10 @@ group :test do
   gem "selenium-webdriver", ">= 4.0.0.rc1"
   gem "webdrivers"
 end
+
+gem "webpacker", "~> 5.4"
+
+gem "bootstrap", "~> 4.4.1"
+gem "jquery-rails"
+
+gem "font-awesome-sass", "~> 4.7"

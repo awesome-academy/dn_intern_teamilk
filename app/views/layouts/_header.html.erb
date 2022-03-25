@@ -1,0 +1,74 @@
+<header class="header">
+  <div class="header__top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6">
+          <div class="header__top__left">
+            <ul>
+              <li><i class="fa fa-envelope"></i>hello@colorlib.com</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6">
+          <div class="header__top__right">
+            <div class="header__top__right__social">
+              <%= link_to (root_path) do %>
+                <i class="fa fa-facebook"></i>
+              <% end %>
+              <%= link_to (root_path) do %>
+                <i class="fa fa-twitter"></i>
+              <% end %>
+              <%= link_to (root_path) do %>
+                <i class="fa fa-linkedin"></i>
+              <% end %>
+              <%= link_to (root_path) do %>
+                <i class="fa fa-pinterest-p"></i>
+              <% end %>
+            </div>
+            <div class="header__top__right__language">
+              <div><%= t "header.Languages" %></div>
+              <ul>
+                <li><%= link_to t("header.English"), locale:"en" %></li>
+                <li><%= link_to t("header.Vietnamese"), locale:"vi" %></li>
+              </ul>
+            </div>
+            <div class="header__top__right__auth">
+              <%= link_to (root_path) do %>
+                <i class="fa fa-user"></i><%= t "Login" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="header__logo">
+          <%= link_to image_tag("img/logo.png"), root_path %>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <nav class="header__menu">
+          <ul>
+            <li class="active">
+              <%= link_to t("header.Home"), root_path %></li>
+            <li>
+              <%= link_to t("header.Category"), root_path %></li>
+            <li>
+              <%= link_to t("header.Contact"), root_path %></li>
+            <li><%= link_to t("header.Profiles"), root_path %>
+              <ul class="header__menu__dropdown">
+                <li><%= link_to t("header.Account_Details"), root_path %></li>
+                <li><%= link_to t("header.Shoping_Cart"), root_path %></li>
+                <li><%= link_to t("header.List_Orders"), root_path %></li>
+                <li><%= link_to t("header.Log_out"), root_path %></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
