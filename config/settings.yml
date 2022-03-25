@@ -1,0 +1,15 @@
+valid:
+  email_regex: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/'
+  length_6: 6
+  length_50: 50
+  length_255: 255
+  length_140: 140
+size:
+  size_80: 80
+  size_50: 50
+time:
+  two_hours: 2
+image:
+  size_mb_5: 5
+  accept_format: ["image/jpeg", "image/gif", "image/png"]
+  accept_format_html: "image/jpeg,image/gif,image/png"

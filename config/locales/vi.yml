@@ -1,4 +1,4 @@
-vi: 
+vi:
   base_title: "TRoA Milk Tea"
   home_text: "Chào mừng bạn gia nhập hội những người sẵn sàng hi sinh cái vòng eo."
   header:
@@ -14,6 +14,12 @@ vi:
     Shoping_Cart: "Giỏ hàng"
     List_Orders: "Danh sách đơn hàng"
     Log_out: "Đăng xuất"
+  model:
+    users:
+      valid:
+        image: "phải là một định dạng hình ảnh hợp lệ"
+        size_image: "phải bé hơn 5Mb"
+        langer_size_image: "Kích thước tệp tối đa là 5MB. Vui lòng chọn một tệp nhỏ hơn."
   footer:
     address: "Địa chỉ: 4F, tòa nhà FHome, 16 đường Lý Thường Kiệt, quận Hải Châu, Đà Nẵng"
     phone: "Số điện thoại: +84 353 967 250"
