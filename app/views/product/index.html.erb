@@ -1,0 +1,17 @@
+<% provide(:title, t("index.all_menu")) %>
+<section class="product spad">
+  <h2><%= t "index.all_menu" %></h2>
+  <ul class="container">
+    <div class="row">
+      <div class="col-lg-9 col-md-7">
+        <div class="row">
+          <% @products.each do |product| %>
+            <!-- <%= image_product product %> -->
+            <%= render "product/product" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </ul>
+  <h6><%== pagy_bootstrap_nav @pagy %></h6>
+</section>

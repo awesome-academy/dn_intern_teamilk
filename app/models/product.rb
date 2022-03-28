@@ -6,4 +6,7 @@ class Product < ApplicationRecord
 
   has_many :product_details, dependent: :destroy
   has_many :reviews, dependent: :destroy
+
+  scope :category, ->{where(product_id: nil)}
+  scope :list_products, ->{where.not(product_id: nil)}
 end

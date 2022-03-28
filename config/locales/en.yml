@@ -14,6 +14,7 @@ en:
     Shoping_Cart: "Shoping Cart"
     List_Orders: "List_Orders"
     Log_out: "Log out"
+    Menu: "Menu"
   model:
     users:
       valid:
@@ -35,3 +36,5 @@ en:
     enter_email: "Get E-mail updates about our latest shop and special offers."
     place_email: "Enter your mail"
     Subscribe: "Subscribe"
+  index:
+    all_menu: "All Menu"
