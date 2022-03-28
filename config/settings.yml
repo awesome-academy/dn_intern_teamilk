@@ -13,3 +13,5 @@ image:
   size_mb_5: 5
   accept_format: ["image/jpeg", "image/gif", "image/png"]
   accept_format_html: "image/jpeg,image/gif,image/png"
+number:
+  digits_6: 6

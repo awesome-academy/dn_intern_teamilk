@@ -1,0 +1,29 @@
+<% unless product.nil? %>
+  <div class="col-lg-4 col-md-6 col-sm-6">
+    <div class="product__item">
+      <div class="product__item__pic set-bg"
+           style="background-image: url(<%= asset_path("img/img_product/" + product.image) %>);
+                  background-repeat: no-repeat;
+                  background-size: contain;">
+        <ul class="product__item__pic__hover">
+          <li>
+            <%= link_to ("#") do %>
+              <i class="fa fa-search"></i>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to ("#") do %>
+              <i class="fa fa-shopping-cart"></i>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+      <div class="product__item__text">
+        <h6>
+          <%= link_to product.name, "#" %>
+        </h6>
+        <h5>$2.99</h5>
+      </div>
+    </div>
+  </div>
+<% end %>
