@@ -1,0 +1,40 @@
+vi:
+  base_title: "TRoA Milk Tea"
+  home_text: "Chào mừng bạn gia nhập hội những người sẵn sàng hi sinh cái vòng eo."
+  header:
+    Languages: "Ngôn ngữ"
+    English: "Tiếng Anh"
+    Vietnamese: "Tiếng VIệt"
+    Login: "Đăng nhập"
+    Home: "Trang chủ"
+    Category: "Danh mục"
+    Contact: "Liên hệ"
+    Profiles: "Tài khoản"
+    Account_Details: "Chi tiết người dùng"
+    Shoping_Cart: "Giỏ hàng"
+    List_Orders: "Danh sách đơn hàng"
+    Log_out: "Đăng xuất"
+    Menu: "Thực đơn"
+  model:
+    users:
+      valid:
+        image: "phải là một định dạng hình ảnh hợp lệ"
+        size_image: "phải bé hơn 5Mb"
+        langer_size_image: "Kích thước tệp tối đa là 5MB. Vui lòng chọn một tệp nhỏ hơn."
+  footer:
+    address: "Địa chỉ: 4F, tòa nhà FHome, 16 đường Lý Thường Kiệt, quận Hải Châu, Đà Nẵng"
+    phone: "Số điện thoại: +84 353 967 250"
+    email: "Email: troamilktea@mail.com"
+    Useful_Links: "Đường dẫn"
+    About_Us: "Về chúng tôi"
+    Delivery_infom: "Thông tin giao hàng"
+    Privacy_Policy: "Chình sách bảo mật"
+    About_Our_Shop: "Về cửa hàng"
+    Projects: "Dự án"
+    Contact: "Liên hệ"
+    join_now: "Tham gia cùng chúng tôi"
+    enter_email: "Nhận thông báo mới qua email"
+    place_email: "Nhập email cua bạn"
+    Subscribe: "Đăng kí"
+  index:
+    all_menu: "Tất cả thực đơn"
