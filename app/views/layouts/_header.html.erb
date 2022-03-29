@@ -5,7 +5,7 @@
         <div class="col-lg-6 col-md-6">
           <div class="header__top__left">
             <ul>
-              <li><i class="fa fa-envelope"></i>hello@colorlib.com</li>
+              <li><i class="fa fa-envelope"></i>troamilktea@mail.com</li>
             </ul>
           </div>
         </div>
@@ -26,10 +26,10 @@
               <% end %>
             </div>
             <div class="header__top__right__language">
-              <div><%= t "header.Languages" %></div>
+              <div><%= t "header.languages" %></div>
               <ul>
-                <li><%= link_to t("header.English"), locale:"en" %></li>
-                <li><%= link_to t("header.Vietnamese"), locale:"vi" %></li>
+                <li><%= link_to t("header.english"), locale:"en" %></li>
+                <li><%= link_to t("header.vietnamese"), locale:"vi" %></li>
               </ul>
             </div>
             <div class="header__top__right__auth">
@@ -53,17 +53,17 @@
         <nav class="header__menu">
           <ul>
             <li class="active">
-              <%= link_to t("header.Home"), root_path %></li>
+              <%= link_to t("header.home"), root_path %></li>
             <li>
-              <%= link_to t("header.Category"), root_path %></li>
+              <%= link_to t("header.menu"), products_index_path %></li>
             <li>
-              <%= link_to t("header.Contact"), root_path %></li>
-            <li><%= link_to t("header.Profiles"), root_path %>
+              <%= link_to t("header.contact"), root_path %></li>
+            <li><%= link_to t("header.profiles"), root_path %>
               <ul class="header__menu__dropdown">
-                <li><%= link_to t("header.Account_Details"), root_path %></li>
-                <li><%= link_to t("header.Shoping_Cart"), root_path %></li>
-                <li><%= link_to t("header.List_Orders"), root_path %></li>
-                <li><%= link_to t("header.Log_out"), root_path %></li>
+                <li><%= link_to t("header.account_Details"), root_path %></li>
+                <li><%= link_to t("header.shoping_Cart"), root_path %></li>
+                <li><%= link_to t("header.list_Orders"), root_path %></li>
+                <li><%= link_to t("header.log_out"), root_path %></li>
               </ul>
             </li>
           </ul>
