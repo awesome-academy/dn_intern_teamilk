@@ -25,6 +25,22 @@ class User < ApplicationRecord
 
   has_secure_password
 
+  def remember
+    self.remember_token = User.new_token
+    update_attribute :remember_digest, User.digest(remember_token)
+  end
+
+  def authenticated? attribute, token
+    digest = send "#{attribute}_digest"
+    return false unless digest
+
+    BCrypt::Password.new(digest).is_password? token
+  end
+
+  def forget
+    update_attribute :remember_digest, nil
+  end
+
   class << self
     def digest string
       cost = if ActiveModel::SecurePassword.min_cost
