@@ -1,0 +1,19 @@
+<%= provide :title, t(".title") %>
+
+<div class="user_login_class">
+  <div class="form_login">
+    <h1><%= t ".login" %></h1>
+    <%= form_for :session, url: login_path do |f| %>
+      <%= f.label :email %>
+      <%= f.email_field :email, required: :true %>
+      <%= f.label :password, t(".password_label") %>
+      <%= link_to t(".forgot_password"), "#" %>
+      <%= f.password_field :password, required: :true %>
+      <%= f.submit t(".submit"), class: "btn btn-primary" %>
+    <% end %>
+    <p>
+      <%= t ".no_account" %>
+      <%= link_to t(".sign_up_now") %>
+    </p>
+  </div>
+</div>
