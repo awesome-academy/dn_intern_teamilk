@@ -35,3 +35,12 @@ vi:
     enter_email: "Nhận thông báo mới qua email"
     place_email: "Nhập email cua bạn"
     Subscribe: "Đăng kí"
+  sessions:
+    new:
+      forgot_password: "Quên mật khẩu"
+      login: "Đăng nhập"
+      no_account: "Bạn chưa có tài khoản ?"
+      password_label: "Mật khẩu"
+      sign_up_now: "Đăng ký ngay"
+      submit: "Đăng nhập"
+      title: "Đăng nhập"

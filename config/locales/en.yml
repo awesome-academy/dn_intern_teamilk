@@ -35,3 +35,12 @@ en:
     enter_email: "Get E-mail updates about our latest shop and special offers."
     place_email: "Enter your mail"
     Subscribe: "Subscribe"
+  sessions:
+    new:
+      forgot_password: "Forgot password"
+      login: "Login"
+      no_account: "Have not account yet?"
+      password_label: "Password"
+      sign_up_now: "Sign up now"
+      submit: "Login"
+      title: "Login"
