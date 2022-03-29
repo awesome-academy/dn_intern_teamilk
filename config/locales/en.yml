@@ -38,6 +38,7 @@ en:
     subscribe: "Subscribe"
   index:
     all_menu: "All Menu"
+    Subscribe: "Subscribe"
   sessions:
     new:
       forgot_password: "Forgot password"

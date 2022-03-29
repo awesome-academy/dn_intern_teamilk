@@ -38,6 +38,7 @@ vi:
     subscribe: "Đăng kí"
   index:
     all_menu: "Tất cả thực đơn"
+    Subscribe: "Đăng kí"
   sessions:
     new:
       forgot_password: "Quên mật khẩu"

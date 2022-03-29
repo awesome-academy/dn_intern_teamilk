@@ -1,0 +1,43 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+@import 'color.scss';
+
+// form sign in, sign out
+.user_login_class {
+  height: 40vh;
+  position: relative;
+
+  .form_login {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    box-shadow: 0 10px 10px $box-shadow-normal;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: $white;
+    border-radius: 10px;
+
+    h1 {
+      text-align: center;
+    }
+
+    a:hover {
+      color: red;
+    }
+
+    input {
+      width: 100%;
+      height: 40px;
+      font-size: 14px;
+      padding-left: 18px;
+      border-radius: 10px;
+      outline: none;
+      border: 1px solid $gray-medium-light;
+      margin-bottom: 20px;
+    }
+  }
+}
