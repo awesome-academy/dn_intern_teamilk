@@ -45,6 +45,12 @@ en:
       login: "Login"
       no_account: "Have not account yet?"
       password_label: "Password"
+      remember_me: "Remember me"
       sign_up_now: "Sign up now"
       submit: "Login"
       title: "Login"
+    create:
+      failed_login: "Invalid email/password combination"
+      no_activation: "Account not activated. Check your email for the activation link."
+      user_not_found: "No accounts found in the system"
+      wrong_pass: "Password is wrong"

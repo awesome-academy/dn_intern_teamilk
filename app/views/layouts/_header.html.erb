@@ -58,14 +58,16 @@
               <%= link_to t("header.menu"), products_index_path %></li>
             <li>
               <%= link_to t("header.contact"), root_path %></li>
-            <li><%= link_to t("header.profiles"), root_path %>
-              <ul class="header__menu__dropdown">
-                <li><%= link_to t("header.account_Details"), root_path %></li>
-                <li><%= link_to t("header.shoping_Cart"), root_path %></li>
-                <li><%= link_to t("header.list_Orders"), root_path %></li>
-                <li><%= link_to t("header.log_out"), root_path %></li>
-              </ul>
-            </li>
+            <% if logged_in? %>
+              <li><%= link_to t("header.profiles"), root_path %>
+                <ul class="header__menu__dropdown">
+                  <li><%= link_to t("header.account_Details"), root_path %></li>
+                  <li><%= link_to t("header.shoping_Cart"), root_path %></li>
+                  <li><%= link_to t("header.list_Orders"), root_path %></li>
+                  <li><%= link_to t("header.log_out"), logout_path, method: "delete" %></li>
+                </ul>
+              </li>
+            <% end %>
           </ul>
         </nav>
       </div>

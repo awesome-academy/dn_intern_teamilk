@@ -45,6 +45,12 @@ vi:
       login: "Đăng nhập"
       no_account: "Bạn chưa có tài khoản ?"
       password_label: "Mật khẩu"
+      remember_me: "Lưu mật khẩu"
       sign_up_now: "Đăng ký ngay"
       submit: "Đăng nhập"
       title: "Đăng nhập"
+    create:
+      failed_login: "Thông tin tài khoản hoặc mật khẩu không chính xác"
+      no_activation: "Tài khoản chưa được kích hoạt. Kiểm tra email của bạn để biết liên kết kích hoạt."
+      user_not_found: "Không tìm thấy tài khoản nào trong hệ thống"
+      wrong_pass: "Mật khẩu không đúng"
