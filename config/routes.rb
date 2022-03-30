@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     root to: "pages#home"
     get "pages/home"
-    get "products/index"
     resources :products
     get "login", to: "sessions#new"
     post "login", to: "sessions#create"

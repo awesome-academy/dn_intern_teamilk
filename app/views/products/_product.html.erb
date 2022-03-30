@@ -7,7 +7,7 @@
                   background-size: contain;">
         <ul class="product__item__pic__hover">
           <li>
-            <%= link_to ("#") do %>
+            <%= link_to product do %>
               <i class="fa fa-search"></i>
             <% end %>
           </li>
@@ -20,7 +20,7 @@
       </div>
       <div class="product__item__text">
         <h6>
-          <%= link_to product.name, "#" %>
+          <%= link_to product.name, product %>
         </h6>
         <h5>$2.99</h5>
       </div>
