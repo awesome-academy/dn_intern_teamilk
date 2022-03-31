@@ -1,0 +1,21 @@
+<div class="cart-page container">
+  <div class="table-responsive">
+    <h3 class="text-center title-cart"><%= t "carts.title" %></h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" class="text-uppercase header"><%= t ".product_name" %></th>
+          <th scope="col" class="text-uppercase"><%= t ".quatity" %></th>
+          <th scope="col" class="text-uppercase"><%= t ".price" %></th>
+          <th scope="col" class="text-uppercase"><%= t ".total" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @products.each do |product_detail, quantity|%>
+          <%= render partial: "shared/item_cart", locals: {product_detail: product_detail, quantity: quantity} %>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
+</div>

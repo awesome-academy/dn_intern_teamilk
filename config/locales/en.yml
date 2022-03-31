@@ -54,3 +54,13 @@ en:
       no_activation: "Account not activated. Check your email for the activation link."
       user_not_found: "No accounts found in the system"
       wrong_pass: "Password is wrong"
+  carts:
+    title: "Cart"
+    create:
+      add_item_to_cart_succes: "Add to cart successfully"
+      not_found_product: "No products found"
+    index:
+      product_name: "Product Name"
+      quatity: "Quantity"
+      price: "Price"
+      total: "Total"

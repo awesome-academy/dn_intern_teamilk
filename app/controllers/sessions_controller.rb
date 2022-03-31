@@ -28,14 +28,14 @@ class SessionsController < ApplicationController
   end
 
   def check_authenticated
-    return true if @user&.authenticate params[:session][:password]
+    return true if @user&.authenticate params.dig(:session, :password)
 
     flash.now[:danger] = t "sessions.create.wrong_pass"
     render :new
   end
 
   def find_user_by_email
-    @user = User.find_by email: params[:session][:email].downcase
+    @user = User.find_by email: params.dig(:session, :email)&.downcase
     return if @user
 
     flash.now[:danger] = t "sessions.create.user_not_found"

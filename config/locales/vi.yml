@@ -54,3 +54,13 @@ vi:
       no_activation: "Tài khoản chưa được kích hoạt. Kiểm tra email của bạn để biết liên kết kích hoạt."
       user_not_found: "Không tìm thấy tài khoản nào trong hệ thống"
       wrong_pass: "Mật khẩu không đúng"
+  carts:
+    title: "Giỏ hàng"
+    create:
+      add_item_to_cart_succes: "Thêm vào giỏ hàng thành công"
+      not_found_product: "Không tìm thấy sản phẩm"
+    index:
+      product_name: "Tên sản phẩm"
+      quatity: "Số lượng"
+      price: "Giá"
+      total: "Tổng"
