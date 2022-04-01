@@ -64,3 +64,12 @@ vi:
       quatity: "Số lượng"
       price: "Giá"
       total: "Tổng"
+  product:
+    status: "Tình trạng"
+    size: "Kích cỡ"
+    share: "Chia sẻ"
+    stocking: "Còn hàng"
+    out_of_stock: "Tạm hết hàng"
+    add_cart: "Thêm vào giỏ hàng"
+    sum_review: "Số đánh giá"
+    product_not_found: "Không tìm thấy sản phẩm"

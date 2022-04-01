@@ -2,7 +2,7 @@
   <div class="col-lg-4 col-md-6 col-sm-6">
     <div class="product__item">
       <div class="product__item__pic set-bg"
-           style="background-image: url(<%= asset_path("img/img_product/" + product.image) %>);
+           style="background-image: url(<%= asset_path("img/img_product/#{product.image}") %>);
                   background-repeat: no-repeat;
                   background-size: contain;">
         <ul class="product__item__pic__hover">
@@ -22,7 +22,6 @@
         <h6>
           <%= link_to product.name, product %>
         </h6>
-        <h5>$2.99</h5>
       </div>
     </div>
   </div>
