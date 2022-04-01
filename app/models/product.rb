@@ -6,7 +6,6 @@ class Product < ApplicationRecord
 
   has_many :product_details, dependent: :destroy
   has_many :reviews, dependent: :destroy
-  has_one_attached :image
 
   scope :parent_products, ->{where(product_id: nil)}
   scope :children_products, ->{where.not(product_id: nil)}

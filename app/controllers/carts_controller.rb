@@ -1,7 +1,7 @@
 class CartsController < ApplicationController
   before_action :cart_current, :find_product_detail, only: %i(create)
 
-  def index
+  def show
     @products = {}
     cart_current.each do |product_detail_id, quantity|
       product_detail = ProductDetail.find_by id: product_detail_id
