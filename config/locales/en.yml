@@ -64,3 +64,12 @@ en:
       quatity: "Quantity"
       price: "Price"
       total: "Total"
+  product:
+    status: "Status"
+    size: "Size"
+    share: "Share on"
+    stocking: "Stocking"
+    out_of_stock: "Out of stock"
+    add_cart: "Add to Cart"
+    sum_review: "Review"
+    product_not_found: "Product not found"

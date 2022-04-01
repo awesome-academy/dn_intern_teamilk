@@ -1,21 +1,25 @@
+<!-- <%= load_fisr_product %> -->
 <section class="product-details spad">
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-md-6">
         <div class="product__details__pic">
           <div class="product__details__pic__item">
-              <%= image_tag "img/img_product/traSuaOolongTranChau.png", alt: "" , class: "product__details__pic__item--large" %>
+              <%= image_tag "img/img_product/#{@product.image}", alt: "" , class: "product__details__pic__item--large" %>
           </div>
         </div>
       </div>
       <div class="col-lg-6 col-md-6">
         <div class="product__details__text">
-          <h3>Tên sản phẩm</h3>
-          <div class="product__details__rating">
-            <span>(Lượng reviews)</span>
+          <div style="display: none;">
+            <div id="div_stock"><%= t "product.stocking" %></div>
+            <div id="div_outstock"><%= t "product.out_of_stock" %></div>
           </div>
-          <div class="product__details__price">Giá sản phẩm</div>
-          <p>Chi tiết sảm phẩm</p>
+          <h3><%= @product.name %></h3>
+          <div class="product__details__rating">
+            <span>(<%= t "product.sum_review" %>)</span>
+          </div>
+          <div class="product__details__price" id="price"><%= @load_first.price %> vnd</div>
           <div class="product__details__quantity">
             <div class="quantity">
               <div class="pro-qty">
@@ -23,11 +27,18 @@
               </div>
             </div>
           </div>
-          <%= link_to "Thêm vào giỏ", "#", class: "primary-btn" %>
+          <%= link_to t("product.add_cart"), "#", class: "primary-btn" %>
           <ul>
-            <li><b>Tình trạng</b> <span>Còn hàng</span></li>
-            <li><b>Size</b> <span>M</span></li>
-            <li><b>Chia sẻ</b>
+            <li><b><%= t "product.status" %></b> <span id="status"><%= @status_quantity %></span></li>
+            <li><b><%= t "product.size" %></b>
+              <% @product_details.each do |product_detail| %>
+                <%= button_tag product_detail.size,
+                    class: "size_onclick",
+                    :onclick => "mychange(#{product_detail.price.to_s},
+                                          #{product_detail.quantity.to_s})"%>
+              <% end %>
+            </li>
+            <li><b><%= t "product.share" %></b>
               <div class="share">
                 <%= link_to (root_path) do %>
                   <i class="fa fa-facebook"></i>
