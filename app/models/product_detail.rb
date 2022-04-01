@@ -2,5 +2,8 @@ class ProductDetail < ApplicationRecord
   belongs_to :product
   delegate :name, to: :product, prefix: :product
 
-  enum size: {size_m: 0, size_l: 1, size_xl: 2}
+  enum size: {M: 0, L: 1, XL: 2}
+
+  scope :sortSizeAsc, ->{order :size}
+  scope :product_by_id, ->(id){where product_id: id}
 end
