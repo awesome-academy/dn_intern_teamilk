@@ -1,0 +1,6 @@
+$( ".check_a_tag_click" ).one("click", function() {
+  $( ".check_a_tag_click" ).find("label").removeClass("active");
+  $(this).find("label").addClass("active");
+});
+$(".price_of_product_details").html('<%= number_to_currency @product_detail.price %>');
+$("#product_detail_id").val("<%= @product_detail.id %> ")

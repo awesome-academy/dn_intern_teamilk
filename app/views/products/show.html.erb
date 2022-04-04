@@ -19,24 +19,28 @@
           <div class="product__details__rating">
             <span>(<%= t "product.sum_review" %>)</span>
           </div>
-          <div class="product__details__price" id="price"><%= @load_first.price %> vnd</div>
-          <div class="product__details__quantity">
-            <div class="quantity">
-              <div class="pro-qty">
-                <input type="text" value="1">
-              </div>
-            </div>
+          <div class="product__details__price" id="price">
+            <span class="price_of_product_details"><%= number_to_currency @product_details.first.price %></span>
           </div>
-          <%= link_to t("product.add_cart"), "#", class: "primary-btn" %>
+
+          <%= form_tag cart_path do %>
+            <%= hidden_field_tag :product_detail_id, @product_details.first.id, id: "product_detail_id" %>
+            <%= submit_tag t("product.add_cart"), class: "primary-btn" %>
+          <% end %>
           <ul>
             <li><b><%= t "product.status" %></b> <span id="status"><%= @status_quantity %></span></li>
             <li><b><%= t "product.size" %></b>
-              <% @product_details.each do |product_detail| %>
-                <%= button_tag product_detail.size,
-                    class: "size_onclick",
-                    :onclick => "mychange(#{product_detail.price.to_s},
-                                          #{product_detail.quantity.to_s})"%>
-              <% end %>
+              <div class="wrapper_product_details">
+                <% @product_details.each do |product_detail| %>
+                  <%= link_to change_size_path(product_detail.id), class: "check_a_tag_click", remote: true do %>
+                    <% if product_detail.id == @product_details.first.id %>
+                      <label class="active" for=<%= product_detail.size %>><%= product_detail.size %></label>
+                    <% else %>
+                      <label for=<%= product_detail.size %>><%= product_detail.size %></label>
+                    <% end %>
+                  <% end %>
+                <% end %>
+              </div>
             </li>
             <li><b><%= t "product.share" %></b>
               <div class="share">
