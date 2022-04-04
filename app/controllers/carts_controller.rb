@@ -1,5 +1,7 @@
 class CartsController < ApplicationController
-  before_action :cart_current, :find_product_detail, only: :create
+  before_action :cart_current, only: :create
+  before_action :find_product_detail, only: %i(create destroy)
+  before_action :delete_cart, only: :destroy
 
   def show
     @products = {}
@@ -15,6 +17,13 @@ class CartsController < ApplicationController
     redirect_to cart_path
   end
 
+  def destroy
+    respond_to do |format|
+      format.html{redirect_to request.referer}
+      format.js
+    end
+  end
+
   private
 
   def cart_current
@@ -23,9 +32,9 @@ class CartsController < ApplicationController
 
   def add_to_cart product_detail_id
     if cart_current.key?(product_detail_id)
-      cart_current[product_detail_id] += 1
+      cart_current[product_detail_id] += Settings.number.digits_1
     else
-      cart_current[product_detail_id] = 1
+      cart_current[product_detail_id] = Settings.number.digits_1
     end
   end
 
@@ -35,5 +44,11 @@ class CartsController < ApplicationController
 
     flash[:danger] = t "carts.create.not_found_product"
     redirect_to cart_path
+  end
+
+  def delete_cart
+    return unless cart_current.key?(params[:product_detail_id])
+
+    cart_current.delete(params[:product_detail_id])
   end
 end
