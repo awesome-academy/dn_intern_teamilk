@@ -561,7 +561,7 @@ ol {
 -----------------------*/
 
 .hero {
-	padding-bottom: 50px;
+	padding-bottom: 10px;
 }
 
 .hero.hero-normal {
@@ -636,6 +636,7 @@ ol {
 .hero__search {
 	overflow: hidden;
 	margin-bottom: 30px;
+	display: flex;
 }
 
 .hero__search__form {
@@ -643,7 +644,7 @@ ol {
 	height: 50px;
 	border: 1px solid #ebebeb;
 	position: relative;
-	float: left;
+	margin:  auto;
 }
 
 .hero__search__form form .hero__search__categories {
@@ -1254,8 +1255,8 @@ ol {
 -----------------------*/
 
 .product {
-	padding-top: 80px;
-	padding-bottom: 80px;
+	padding-top: 20px;
+	padding-bottom: 30px;
 }
 
 .product__discount {
@@ -1487,7 +1488,7 @@ ol {
 
 .filter__found {
 	text-align: center;
-	margin-bottom: 15px;
+	margin-bottom: 0px;
 }
 
 .filter__found h6 {

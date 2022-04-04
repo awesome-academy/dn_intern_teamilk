@@ -9,4 +9,6 @@ class Product < ApplicationRecord
 
   scope :parent_products, ->{where(product_id: nil)}
   scope :children_products, ->{where.not(product_id: nil)}
+  scope :search_product_by_name, ->(name){where "name LIKE ?", "%#{name}%"}
+  scope :search_product_by_parent_id, ->(id){where product_id: id.to_s}
 end
