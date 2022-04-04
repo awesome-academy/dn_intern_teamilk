@@ -1,0 +1,13 @@
+<div class="col-lg-3 col-md-5">
+  <div class="sidebar">
+    <div class="sidebar__item">
+      <h4><%= t "shared.category" %></h4>
+      <ul>
+        <% @parent_products.each do |parent_product| %>
+          <li><%= link_to parent_product.name,
+                  products_path(parent_id: parent_product.id) %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
