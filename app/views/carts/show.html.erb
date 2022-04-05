@@ -10,7 +10,7 @@
           <th scope="col" class="text-uppercase"><%= t ".total" %></th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="list_product_in_cart">
         <% @products.each do |product_detail, quantity|%>
           <%= render partial: "shared/item_cart", locals: {product_detail: product_detail, quantity: quantity} %>
         <% end %>

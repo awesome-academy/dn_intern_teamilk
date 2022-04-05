@@ -14,7 +14,6 @@ class ProductDetailsController < ApplicationController
     return if @product_detail
 
     flash[:danger] = t "product.product_not_found"
-    flash.keep(:danger)
     render js: "window.location = '#{root_path}'"
   end
 end
