@@ -10,10 +10,15 @@ class ProductsController < ApplicationController
 
   def show
     @product_details = @product.product_details.sortSizeAsc
+    return if @product_details.present?
+
+    flash[:danger] = t "product.out_of_stock"
+    redirect_to products_path
   end
 
   # =========================================================
   private
+
   def find_product
     @product = Product.find_by id: params[:id]
     return if @product

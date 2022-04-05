@@ -8,17 +8,17 @@
 User.create(name: "Hoang Truong", email: "hat@gmail.com",
             password: "123456", password_confirmation: "123456",
             activated: true, activated_at: Time.zone.now)
-Product.create(name: "Tra sua", description: "Tra sua danh muc")
-10.times do
-  Product.create(name: Faker::Nation.capital_city,
-                  description: Faker::Lorem.sentence(),
-                  image: "traSuaFullTHach.png",
-                  product_id: 1)
-end
+# Product.create(name: "Tra sua", description: "Tra sua danh muc")
+# 10.times do
+#   Product.create(name: Faker::Nation.capital_city,
+#                   description: Faker::Lorem.sentence(),
+#                   image: "traSuaFullTHach.png",
+#                   product_id: 1)
+# end
 
-30.times do |n|
-  ProductDetail.create(quantity: n,
-                       price: n*10000,
-                       size: 1,
-                       product_id: Product.pluck(:id).sample)
-end
+# 30.times do |n|
+#   ProductDetail.create(quantity: n,
+#                        price: n*10000,
+#                        size: 1,
+#                        product_id: Product.pluck(:id).sample)
+# end

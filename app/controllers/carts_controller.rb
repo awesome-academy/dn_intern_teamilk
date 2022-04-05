@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  before_action :cart_current, :find_product_detail, only: %i(create)
+  before_action :cart_current, :find_product_detail, only: :create
 
   def show
     @products = {}
@@ -10,7 +10,7 @@ class CartsController < ApplicationController
   end
 
   def create
-    add_to_cart @product_detail.id
+    add_to_cart @product_detail.id.to_s
     flash[:success] = t ".add_item_to_cart_succes"
     redirect_to cart_path
   end
@@ -22,7 +22,11 @@ class CartsController < ApplicationController
   end
 
   def add_to_cart product_detail_id
-    cart_current[product_detail_id] = 1
+    if cart_current.key?(product_detail_id)
+      cart_current[product_detail_id] += 1
+    else
+      cart_current[product_detail_id] = 1
+    end
   end
 
   def find_product_detail
