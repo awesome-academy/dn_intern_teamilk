@@ -1,0 +1,17 @@
+<section class="hero">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9">
+        <div class="hero__search">
+          <div class="hero__search__form">
+            <%= form_tag(products_path, method: :get) do %>
+              <%= text_field_tag :name, nil,
+                                 placeholder: t("shared.what_do_u_need") %>
+              <%= button_tag t("shared.search"), class: "site-btn" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,46 @@
+<section class="product spad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 col-md-7">
+        <div class="filter__item">
+          <div class="row">
+            <div class="col-lg-4 col-md-5">
+              <div class="filter__sort">
+                <div class="header">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <nav class="header__menu">
+                          <ul>
+                            <li><h5><%= link_to t("shared.sort_by"), "#" %></h5>
+                              <ul class="header__menu__dropdown">
+                                <li><%= link_to t("shared.name_a_z"),
+                                        products_path(sort_id: 1) %></li>
+                                <li><%= link_to t("shared.name_z_a"),
+                                        products_path(sort_id: 2) %></li>
+                                <li><%= link_to t("shared.date_lastest"),
+                                        products_path(sort_id: 3) %></li>
+                                <li><%= link_to t("shared.date_oldest"),
+                                        products_path(sort_id: 4) %></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <h6>
+                                <span><%= @children_products.count %></span>
+                                <%= t "shared.product_found" %>
+                              </h6>
+                            </li>
+                          </ul>
+                        </nav>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
