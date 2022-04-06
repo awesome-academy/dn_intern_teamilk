@@ -1,0 +1,2 @@
+$('#quantity_<%= @product_detail.id %> #price_of_one_proc')
+  .html("<%= number_to_currency(caculator_price_in_cart(@product_detail.price, @quantity)) %>")

@@ -1,7 +1,9 @@
 class CartsController < ApplicationController
-  before_action :cart_current, only: :create
-  before_action :find_product_detail, only: %i(create destroy)
+  include CartsHelper
+  before_action :find_product_detail, only: %i(create destroy update)
   before_action :delete_cart, only: :destroy
+  before_action :check_quantity_exceeds_amount, only: :update
+  skip_before_action :verify_authenticity_token, only: :update
 
   def show
     @products = {}
@@ -17,6 +19,16 @@ class CartsController < ApplicationController
     redirect_to cart_path
   end
 
+  def update
+    update_quantity_cart params[:product_detail_id],
+                         params[:quantity], @product_detail.quantity
+    @quantity = params[:quantity].to_i
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def destroy
     respond_to do |format|
       format.html{redirect_to request.referer}
@@ -25,10 +37,6 @@ class CartsController < ApplicationController
   end
 
   private
-
-  def cart_current
-    session[:carts] ||= {}
-  end
 
   def add_to_cart product_detail_id
     if cart_current.key?(product_detail_id)
@@ -50,5 +58,25 @@ class CartsController < ApplicationController
     return unless cart_current.key?(params[:product_detail_id])
 
     cart_current.delete(params[:product_detail_id])
+  end
+
+  def update_quantity_cart product_detail_id, quantity, product_quantity
+    if cart_current.key?(product_detail_id)
+      cart_current[product_detail_id] = if product_quantity < quantity.to_i
+                                          Settings.number.digits_1
+                                        else
+                                          quantity.to_i
+                                        end
+    else
+      cart_current[product_detail_id] = Settings.number.digits_1
+    end
+  end
+
+  def check_quantity_exceeds_amount
+    return unless @product_detail.quantity < params[:quantity].to_i
+
+    flash[:danger] = t("carts.update..exceed",
+                       product_name: @product_detail.product_name)
+    render js: "window.location = '#{cart_path}'"
   end
 end
