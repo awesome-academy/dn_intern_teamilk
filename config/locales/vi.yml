@@ -64,6 +64,8 @@ vi:
       quatity: "Số lượng"
       price: "Giá"
       total: "Tổng"
+    update:
+      exceed: "Sản phẩm: %{product_name} vượt quá giới hạn đang có."
   product:
     status: "Tình trạng"
     size: "Kích cỡ"

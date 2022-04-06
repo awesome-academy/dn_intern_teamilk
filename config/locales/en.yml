@@ -64,6 +64,8 @@ en:
       quatity: "Quantity"
       price: "Price"
       total: "Total"
+    update:
+      exceed: "Product: %{product_name} exceed amount"
   product:
     status: "Status"
     size: "Size"

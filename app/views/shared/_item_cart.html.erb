@@ -15,12 +15,14 @@
   <div class="update-quantity">
     <button class="minus manage_quantity">-</button>
     <input class="manage_quantity quantity"
+      data-id="<%= product_detail.id %>"
+      data-quantity="<%= product_detail.quantity %>"
       value="<%= quantity %>" />
     <button class="plus manage_quantity">+</button>
   </div>
   </td>
   <td><%= number_to_currency(product_detail.price) %></td>
-  <td class="font-weight-bold"> <%= number_to_currency(product_detail.price*quantity) %> </td>
+  <td class="font-weight-bold" id="price_of_one_proc"> <%= number_to_currency(caculator_price_in_cart(product_detail.price, quantity)) %> </td>
   <td>
     <%= link_to content_tag(:i, nil, class: "fa fa-trash fa-lg"), cart_path(product_detail.id),
                             remote: true, method: :delete, class: "btn btn-danger", :data => {:confirm => t("shared.are_u_sure")} %>
