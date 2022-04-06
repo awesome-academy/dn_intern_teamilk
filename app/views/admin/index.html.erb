@@ -1,0 +1,69 @@
+<div class="div_admin_index">
+  <h3><%= t "admin_index.welcome" %></h3>
+  <table>
+    <tr class="admin_index_tr">
+      <td>
+        <%= link_to (root_path) do %>
+          <div class="item_index_admin">
+            <span>
+              <i class="fa fa-coffee fa-5x"></i>
+              <h3><%= t "admin_index.menu" %></h3>
+            </span>
+          </div>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to (root_path) do %>
+          <div class="item_index_admin">
+            <span>
+              <i class="fa fa-user-circle-o fa-5x"></i>
+              <h3><%= t "admin_index.users" %></h3>
+            </span>
+          </div>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to (root_path) do %>
+          <div class="item_index_admin">
+            <span>
+              <i class="fa fa-comments-o fa-5x"></i>
+              <h3><%= t "admin_index.comments" %></h3>
+            </span>
+          </div>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= link_to (root_path) do %>
+          <div class="item_index_admin">
+            <span>
+              <i class="fa fa-shopping-basket fa-5x"></i>
+              <h3><%= t "admin_index.carts" %></h3>
+            </span>
+          </div>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to (root_path) do %>
+          <div class="item_index_admin">
+            <span>
+              <i class="fa fa-cubes fa-5x"></i>
+              <h3><%= t "admin_index.orders" %></h3>
+            </span>
+          </div>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to (root_path) do %>
+          <div class="item_index_admin">
+            <span>
+              <i class="fa fa-area-chart fa-5x"></i>
+              <h3><%= t "admin_index.statistics" %></h3>
+            </span>
+          </div>
+        <% end %>
+      </td>
+    </tr>
+  </table>
+</div>

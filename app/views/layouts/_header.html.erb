@@ -26,17 +26,34 @@
               <% end %>
             </div>
             <div class="header__top__right__language">
-              <div><%= t "header.languages" %></div>
+              <div><i class="fa fa-language"></i>
+                   <%= t "header.languages" %></div>
               <ul>
                 <li><%= link_to t("header.english"), locale:"en" %></li>
                 <li><%= link_to t("header.vietnamese"), locale:"vi" %></li>
               </ul>
             </div>
-            <div class="header__top__right__auth">
-              <%= link_to (login_path) do %>
-                <i class="fa fa-user"></i><%= t "Login" %>
+            <% unless logged_in? %>
+              <div class="header__top__right__auth">
+                <%= link_to (login_path) do %>
+                  <i class="fa fa-user"></i><%= t "header.login" %>
+                <% end %>
+              </div>
+            <% else %>
+              <% if admin %>
+                <div class="header__top__right__auth">
+                  <%= link_to (admin_path) do %>
+                    <i class="fa fa-cog"></i><%= t "header.admin" %>
+                  <% end %>
+                </div>
+              <% else %>
+                <div class="header__top__right__auth">
+                  <%= link_to (root_path) do %>
+                    <i class="fa fa-user"></i><%= t "header.user" %>
+                  <% end %>
+                </div>
               <% end %>
-            </div>
+            <% end %>
           </div>
         </div>
       </div>
@@ -52,19 +69,26 @@
       <div class="col-lg-6">
         <nav class="header__menu">
           <ul>
-            <li>
-              <%= link_to t("header.home"), root_path %></li>
-            <li>
-              <%= link_to t("header.menu"), products_path %></li>
-            <li>
-              <%= link_to t("header.contact"), root_path %></li>
+            <% if logged_in? && admin %>
+              <li><%= link_to t("header.admin_page"), admin_path %></li>
+            <% else %>
+              <li><%= link_to t("header.home"), root_path %></li>
+              <li><%= link_to t("header.menu"), products_path %></li>
+              <li><%= link_to t("header.contact"), root_path %></li>
+            <% end %>
             <% if logged_in? %>
               <li><%= link_to t("header.profiles"), root_path %>
                 <ul class="header__menu__dropdown">
-                  <li><%= link_to t("header.account_Details"), root_path %></li>
-                  <li><%= link_to t("header.shoping_Cart"), cart_path %></li>
-                  <li><%= link_to t("header.list_Orders"), root_path %></li>
-                  <li><%= link_to t("header.log_out"), logout_path, method: "delete" %></li>
+                  <% unless admin %>
+                    <li><%= link_to t("header.account_Details"),
+                            root_path %></li>
+                    <li><%= link_to t("header.shoping_Cart"),
+                            cart_path %></li>
+                    <li><%= link_to t("header.list_Orders"),
+                            root_path %></li>
+                  <% end %>
+                  <li><%= link_to t("header.log_out"),
+                          logout_path, method: "delete" %></li>
                 </ul>
               </li>
             <% end %>
