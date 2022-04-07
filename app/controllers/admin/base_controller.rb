@@ -1,4 +1,4 @@
-class AdminController < ApplicationController
+class Admin::BaseController < ApplicationController
   before_action :login?, :admin?
 
   def index; end
@@ -17,5 +17,12 @@ class AdminController < ApplicationController
 
     flash[:danger] = t "admin_index.can_not_accesss"
     redirect_to root_url
+  end
+
+  def get_list_products
+    @list_product = Product.search_product_by_name(params[:name])
+    return unless @list_product.empty?
+
+    flash.now[:warning] = t "admin.not_found"
   end
 end

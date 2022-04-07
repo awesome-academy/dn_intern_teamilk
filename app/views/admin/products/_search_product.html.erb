@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="hero__search">
+    <div>
+      <%= button_to t("admin.products.category"), admin_categories_path, method: :get, class: "site-btn" %>
+    </div>
+    <div class="search_product_button">
+      <%= button_to t("admin.products.add_new_product"), root_path, method: :get, class: "site-btn" %>
+    </div>
+    <div class="hero__search__form">
+      <%= form_tag(admin_products_path, method: :get) do %>
+        <%= text_field_tag :name %>
+        <%= button_tag t("shared.search"), class: "site-btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -3487,3 +3487,13 @@ ol {
 .item_index_admin :hover{
 	color:  #7fad39;
 }
+.product_row_image{
+	max-width: 100px;
+}
+.table_center_row{
+	margin: 0 auto;
+	text-align: center;
+}
+.search_product_button{
+	margin-left: 20px;
+}

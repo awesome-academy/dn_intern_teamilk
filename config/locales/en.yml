@@ -12,7 +12,7 @@ en:
     profiles: "Profiles"
     account_Details: "Account Details"
     shoping_Cart: "Shoping Cart"
-    list_Orders: "List_Orders"
+    list_Orders: "List Orders"
     log_out: "Log out"
     menu: "Menu"
     admin: "Administrator"
@@ -101,3 +101,14 @@ en:
     statistics: "Statistics"
     can_not_accesss: "You are not authorized to access."
     not_logged_in: "You are not logged in."
+  admin:
+    not_found: "Not found"
+    products:
+      add_new_product: "Add new product"
+      category: "Categoris"
+      edit: "Edit"
+      change_size: "Change size"
+      delete: "Delete"
+    category:
+      product: "Products"
+      add_new_category: "add new category"
