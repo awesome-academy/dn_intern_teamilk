@@ -69,6 +69,10 @@ en:
       total: "Total"
     update:
       exceed: "Product: %{product_name} exceed amount"
+      exceed_amount: "Not enough stock, please re-enter"
+    show:
+      total_price: "Total Price"
+      button_order: "Order"
   product:
     status: "Status"
     size: "Size"
@@ -112,3 +116,9 @@ en:
     category:
       product: "Products"
       add_new_category: "add new category"
+  orders:
+    new:
+      button_order: "Orders"
+      order_address: "Order Address"
+      change_button: "Change"
+      add_address: "Add address"

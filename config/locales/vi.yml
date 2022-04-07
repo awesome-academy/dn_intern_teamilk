@@ -69,6 +69,10 @@ vi:
       total: "Tổng"
     update:
       exceed: "Sản phẩm: %{product_name} vượt quá giới hạn đang có."
+      exceed_amount: "Không đủ hàng vui lòng nhập lại"
+    show:
+      total_price: "Tổng tiền"
+      button_order: "Mua hàng"
   product:
     status: "Tình trạng"
     size: "Kích cỡ"
@@ -112,3 +116,9 @@ vi:
     category:
       product: "Sản phẩm"
       add_new_category: "Thêm danh mục mới"
+  orders:
+    new:
+      button_order: "Mua hàng"
+      order_address: "Địa chỉ giao hàng"
+      change_button: "Thay đổi"
+      add_address: "Thêm địa chỉ"

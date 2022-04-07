@@ -1,0 +1,43 @@
+<div class="list-orders container-fluid">
+  <div>
+    <div class ="address box-order">
+      <h4><%= t ".order_address" %></h4>
+      <div class="info">
+        <% if @default_address %>
+          <span><%= @default_address.name %></span>
+          <span><%= @default_address.phone %></span>
+          <span><%= @default_address.address %></span>
+          <button class="btn btn-primary"><%= t ".change_button" %></button>
+        <% end %>
+        <button class="btn btn-primary"><%= t ".add_address" %></button>
+      </div>
+    </div>
+    <div class="list-product box-order">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" class="text-uppercase header"><%= t "carts.index.product_name" %></th>
+            <th scope="col" class="text-uppercase"><%= t "carts.index.quatity" %></th>
+            <th scope="col" class="text-uppercase"><%= t "carts.index.price" %></th>
+            <th scope="col" class="text-uppercase"><%= t "carts.index.total" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @products.each do |product_detail, quantity|%>
+            <%= render partial: "shared/item_order", locals: {product_detail: product_detail, quantity: quantity} %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="total-order box-order">
+      <div>
+        <div class="item">
+        <span><%= t "carts.show.total_price" %></span>
+        <span><%= number_to_currency(cart_total_price_in_cart) %></span>
+      </div>
+      <%= form_for(Order.new, url: orders_path) do |f| %>
+        <%= f.submit t(".button_order"), class: "btn btn-primary button-order" %>
+      <% end %>
+    </div>
+  </div>
+</div>

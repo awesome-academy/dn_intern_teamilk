@@ -1,0 +1,57 @@
+// Place all the styles related to the Orders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.list-orders {
+  background-color: rgba(82, 165, 184, 0.333);
+  margin: 20px;
+
+  .box-order {
+    background-color: white;
+    padding: 15px;
+    border-radius: 2px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+
+  .list-product {
+    margin-bottom: 30px;
+  }
+
+  .total-order {
+    margin-top: 30px;
+    display: flex;
+    justify-content: right;
+    .item {
+      width: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+    }
+
+    .button-order {
+      width: 100px !important;
+      float: right;
+      text-align: center;
+      margin-right: 10px;
+    }
+  }
+
+  .address {
+    .info {
+      margin-top: 10px;
+      span {
+        padding: 0 10px;
+      }
+    }
+  }
+}
+
+.action-order {
+  display: flex;
+  justify-content: center;
+
+  form {
+    margin-left: 10px;
+  }
+}
