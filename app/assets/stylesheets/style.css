@@ -3467,3 +3467,23 @@ ol {
 		font-size: 24px;
 	}
 }
+
+.div_admin_index{
+	margin: 0 auto;
+	text-align: center;
+}
+/*-------------------------------------*/
+.div_admin_index table{
+	width: 100%;
+	margin-top: 5%;
+  border-collapse: separate;
+ 	border-spacing: 0 60px;
+ 	table-layout: fixed;
+}
+.item_index_admin{
+	color: #343a40;
+	text-rendering: auto;
+}
+.item_index_admin :hover{
+	color:  #7fad39;
+}

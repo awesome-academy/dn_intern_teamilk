@@ -15,6 +15,8 @@ vi:
     list_Orders: "Danh sách đơn hàng"
     log_out: "Đăng xuất"
     menu: "Thực đơn"
+    admin: "Quản lý"
+    admin_page: "TRang quản lý"
   model:
     users:
       valid:
@@ -39,6 +41,7 @@ vi:
   index:
     all_menu: "Tất cả thực đơn"
     Subscribe: "Đăng kí"
+    hello_admin: "Bạn đang đăng nhập với tài khoản của nhà quản trị."
   sessions:
     new:
       forgot_password: "Quên mật khẩu"
@@ -88,3 +91,13 @@ vi:
     what_do_u_need: "Bạn cần gì?"
     search: "Tìm kiếm"
     are_u_sure: "Bạn chắc chứ?"
+  admin_index:
+    welcome: "Mừng về nhà, Chủ nhân!"
+    menu: "Thực đơn"
+    users: "Người dùng"
+    comments: "Bình luận"
+    carts: "Giỏ hàng"
+    orders: "Đơn hàng"
+    statistics: "Thống kê"
+    can_not_accesss: "Bạn không đủ quyền truy cập."
+    not_logged_in: "Bạn chưa đăng nhập"

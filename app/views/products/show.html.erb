@@ -20,7 +20,10 @@
             <span>(<%= t "product.sum_review" %>)</span>
           </div>
           <div class="product__details__price" id="price">
-            <span class="price_of_product_details"><%= number_to_currency @product_details.first.price %></span>
+            <span class="price_of_product_details">
+              <%= number_to_currency(@product_details.first.price,
+                                     :unit => "")%> VND
+            </span>
           </div>
 
           <%= form_tag cart_path do %>

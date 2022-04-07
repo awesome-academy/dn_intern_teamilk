@@ -15,6 +15,8 @@ en:
     list_Orders: "List_Orders"
     log_out: "Log out"
     menu: "Menu"
+    admin: "Administrator"
+    admin_page: "Admin page"
   model:
     users:
       valid:
@@ -39,6 +41,7 @@ en:
   index:
     all_menu: "All Menu"
     Subscribe: "Subscribe"
+    hello_admin: "You are logged in with an administrator account."
   sessions:
     new:
       forgot_password: "Forgot password"
@@ -88,3 +91,13 @@ en:
     what_do_u_need: "What do you need?"
     search: "Search"
     are_u_sure: "Are you sure?"
+  admin_index:
+    welcome: "Welcome home, Master!"
+    menu: "Menu"
+    users: "Users"
+    comments: "Comments"
+    carts: "Carts"
+    orders: "Orders"
+    statistics: "Statistics"
+    can_not_accesss: "You are not authorized to access."
+    not_logged_in: "You are not logged in."
