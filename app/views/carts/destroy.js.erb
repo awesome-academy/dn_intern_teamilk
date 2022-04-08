@@ -1,3 +1,4 @@
 var parent = document.getElementById("list_product_in_cart")
 var child = document.getElementById("#quantity_<%= @product_detail.id %>")
 $("#quantity_<%= @product_detail.id %>").remove();
+$(".cart_total_price").html("<%= number_to_currency(cart_total_price_in_cart) %>")

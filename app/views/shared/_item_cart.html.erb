@@ -21,9 +21,9 @@
     <button class="plus manage_quantity">+</button>
   </div>
   </td>
-  <td><%= number_to_currency(product_detail.price, unit: "") %> VND</td>
-  <td class="font-weight-bold">
-    <%= number_to_currency(caculator_price_in_cart(product_detail.price, quantity), unit: "") %> VND </td>
+  <td><%= number_to_currency(product_detail.price, :unit => "") %> VND</td>
+  <td class="font-weight-bold" id="price_of_one_proc">
+    <%= number_to_currency(caculator_price_in_cart(product_detail.price, quantity), :unit => "") %> VND </td>
   <td>
     <%= link_to content_tag(:i, nil, class: "fa fa-trash fa-lg"),
         cart_path(product_detail.id),

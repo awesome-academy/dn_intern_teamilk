@@ -1,7 +1,7 @@
 // Place all the styles related to the Carts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.cart-page {
+.cart-page, .list-orders {
   @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
   * {
@@ -128,7 +128,7 @@
     align-items: center
   }
 
-  .total-cart {
+  .total_cart_order {
     display: flex;
     align-items: center;
     justify-content: right;
@@ -138,10 +138,17 @@
     border: 1px solid #ECEAEA;
     margin-top: 20px;
     margin-bottom: 20px;
+    padding-right: 30px;
+    .btn {
+      font-size: 14px;
+    }
   }
 
-  .total-cart .item {
+  .total_cart_order .item {
     margin-right: 10px;
+    color: red;
+    font-weight: bold;
+
   }
 
   .table tr td,

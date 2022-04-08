@@ -41,7 +41,7 @@ $(document).ready(function(){
     let product_detail_id = $(this).data("id");
     let quantity = $(this).val();
     let product_quantity = $(this).data("quantity");
-    if (product_quantity < quantity) {
+    if (product_quantity < quantity || quantity < 1) {
       alert("exceed the amount");
       $(this).val(1)
       quantity = 1

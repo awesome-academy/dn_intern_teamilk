@@ -1,0 +1,21 @@
+<tr id="quantity_<%= product_detail.id %>">
+  <td class="item">
+    <div class="d-flex align-items-start">
+      <div class="thumb-image">
+        <%= image_tag "img/img_product/traSuaKhoaiMon.png" %>
+      </div>
+      <div class="name_products">
+        <%= product_detail.product_name %>
+        <br>
+        <%= product_detail.size %>
+      </div>
+    </div>
+  </td>
+  <td>
+    <span><%= quantity %></span>
+  </td>
+  <td><%= number_to_currency(product_detail.price) %></td>
+  <td class="font-weight-bold" id="price_of_one_proc">
+    <%= number_to_currency(caculator_price_in_cart(product_detail.price, quantity)) %>
+  </td>
+</tr>

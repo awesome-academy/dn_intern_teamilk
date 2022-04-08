@@ -16,6 +16,10 @@
         <% end %>
       </tbody>
     </table>
-
+    <div class="total_cart_order">
+      <span class="item"><%= t ".total_price" %></span>
+      <span class="item cart_total_price"><%= number_to_currency(cart_total_price_in_cart) %></span>
+      <%= link_to t(".button_order"),new_order_path , class: "btn btn-danger" %>
+    </div>
   </div>
 </div>

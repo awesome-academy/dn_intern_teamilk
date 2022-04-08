@@ -1,2 +1,3 @@
 $('#quantity_<%= @product_detail.id %> #price_of_one_proc')
-  .html("<%= number_to_currency(caculator_price_in_cart(@product_detail.price, @quantity)) %>")
+  .html("<%= number_to_currency(caculator_price_in_cart(@product_detail.price, @quantity), :unit => "") %> VND")
+$(".cart_total_price").html("<%= number_to_currency(cart_total_price_in_cart, :unit => "") %> VND")

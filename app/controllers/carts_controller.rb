@@ -1,7 +1,6 @@
 class CartsController < ApplicationController
   include CartsHelper
   before_action :find_product_detail, only: %i(create destroy update)
-  before_action :delete_cart, only: :destroy
   before_action :check_quantity_exceeds_amount, only: :update
   skip_before_action :verify_authenticity_token, only: :update
 
@@ -30,6 +29,7 @@ class CartsController < ApplicationController
   end
 
   def destroy
+    delete_cart params[:product_detail_id]
     respond_to do |format|
       format.html{redirect_to request.referer}
       format.js
@@ -52,12 +52,6 @@ class CartsController < ApplicationController
 
     flash[:danger] = t "carts.create.not_found_product"
     redirect_to cart_path
-  end
-
-  def delete_cart
-    return unless cart_current.key?(params[:product_detail_id])
-
-    cart_current.delete(params[:product_detail_id])
   end
 
   def update_quantity_cart product_detail_id, quantity, product_quantity
