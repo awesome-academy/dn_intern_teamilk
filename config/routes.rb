@@ -11,11 +11,14 @@ Rails.application.routes.draw do
       get "/", to: "base#index"
       resources :products
       resources :categories
+      resources :orders
+      get "order/status/:id_status", to: "orders#admin_show_by_status", as: "show_order_by_status"
     end
     get "change_size_product_detail/:id", to: "product_details#show", as: "change_size"
     delete "/:product_detail_id/cart", to: "carts#destroy"
 
     resources :orders
+    get "order/status/:id_status", to: "orders#show_by_status", as: "show_order_by_status"
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

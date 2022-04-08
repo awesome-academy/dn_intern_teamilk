@@ -116,6 +116,9 @@ vi:
     category:
       product: "Sản phẩm"
       add_new_category: "Thêm danh mục mới"
+    orders:
+      index:
+        no_order: "Không có đơn hàng nào"
   orders:
     new:
       button_order: "Mua hàng"
@@ -123,6 +126,32 @@ vi:
       change_button: "Thay đổi"
       add_address: "Thêm địa chỉ"
       no_proc_in_cart: "Không có sản phẩm nào trong giỏ hàng, mua đi bro!"
+      status_order: "Trạng thái đơn hàng"
     create:
       success_order: "Đặt hàng thành công"
       has_err: "Không thành công, có lỗi xảy ra"
+      sucess_order_status: "Xác nhận đã nhận đơn hàng thành công"
+      chage_order_success: "Thay đổi đơn hàng thành công"
+    index:
+      all_orders: "Tất cả"
+      product_name: "Tên sản phẩm"
+      quantity: "Số lượng"
+      price: "Giá"
+      total: "Tổng tiền"
+      action: "Hành động"
+      order_date: "Ngày mua"
+      all_order_title: "Danh sách hóa đơn"
+      show: "Xem chi tiết"
+      success: "Đã nhận hàng"
+      cancel: "Hủy đơn"
+    destroy:
+      success_order: "Hủy đơn hàng thành công"
+      has_err: "Có lỗi xảy ra, hủy đơn hàng thất bại"
+  enums:
+    order_status:
+      waiting: "Hàng chờ"
+      making: "Đang làm"
+      delivering: "Đang giao"
+      delivered: "Đã giao hàng"
+      success: "Thành công"
+      rejected: "Hủy đơn"

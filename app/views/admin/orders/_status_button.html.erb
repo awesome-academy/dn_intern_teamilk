@@ -1,0 +1,4 @@
+<%= form_for [:admin, order] do |f| %>
+  <%= f.hidden_field :status, value: status %>
+  <%= f.submit t("enums.order_status."<< status.to_s), class: "btn btn-#{status}", data: { confirm: t("shared.are_u_sure") } %>
+<% end %>
