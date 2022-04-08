@@ -12,12 +12,10 @@ module CartsHelper
   end
 
   def cart_total_price_in_cart
-    total = 0
-    cart_current.each do |id, quantity|
-      product_detail = find_product_detail_in_cart(id)
-      total += (product_detail.price * quantity)
+    cart_current.reduce(0) do |total, element|
+      product_detail = find_product_detail_in_cart(element[0])
+      total + (product_detail.price * element[1])
     end
-    total
   end
 
   def find_product_detail_in_cart id

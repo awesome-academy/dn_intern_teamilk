@@ -1,4 +1,5 @@
 class ProductDetail < ApplicationRecord
+  has_many :order_details, dependent: :destroy
   belongs_to :product
   delegate :name, to: :product, prefix: :product
 
