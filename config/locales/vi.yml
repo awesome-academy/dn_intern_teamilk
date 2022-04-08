@@ -101,3 +101,14 @@ vi:
     statistics: "Thống kê"
     can_not_accesss: "Bạn không đủ quyền truy cập."
     not_logged_in: "Bạn chưa đăng nhập"
+  admin:
+    not_found: "Không tìm thấy"
+    products:
+      add_new_product: "Thêm sản phẩm"
+      category: "Danh mục"
+      edit: "Sửa"
+      change_size: "Thay đổi kích thước"
+      delete: "Xóa"
+    category:
+      product: "Sản phẩm"
+      add_new_category: "Thêm danh mục mới"

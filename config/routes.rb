@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     delete "logout", to: "sessions#destroy"
     resource :cart
     namespace :admin do
-        get "/", action: :index
+      get "/", to: "base#index"
+      resources :products
+      resources :categories
     end
     get "change_size_product_detail/:id", to: "product_details#show", as: "change_size"
     delete "/:product_detail_id/cart", to: "carts#destroy"
