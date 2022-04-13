@@ -122,3 +122,7 @@ en:
       order_address: "Order Address"
       change_button: "Change"
       add_address: "Add address"
+      no_proc_in_cart: "There are no products in the cart, go buy it bro!"
+    create:
+      success_order: "Successful order"
+      has_err: "Failed, an error occurred"

@@ -36,6 +36,7 @@
         <span><%= number_to_currency(cart_total_price_in_cart) %></span>
       </div>
       <%= form_for(Order.new, url: orders_path) do |f| %>
+        <%= hidden_field_tag :address_id, @default_address.id, id: "address_id" %>
         <%= f.submit t(".button_order"), class: "btn btn-primary button-order" %>
       <% end %>
     </div>

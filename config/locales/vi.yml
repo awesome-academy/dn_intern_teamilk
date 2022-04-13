@@ -122,3 +122,7 @@ vi:
       order_address: "Địa chỉ giao hàng"
       change_button: "Thay đổi"
       add_address: "Thêm địa chỉ"
+      no_proc_in_cart: "Không có sản phẩm nào trong giỏ hàng, mua đi bro!"
+    create:
+      success_order: "Đặt hàng thành công"
+      has_err: "Không thành công, có lỗi xảy ra"
