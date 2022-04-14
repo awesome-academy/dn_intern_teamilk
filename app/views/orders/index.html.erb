@@ -1,0 +1,28 @@
+<div class="history_order container-fluid">
+  <div class="container">
+    <nav class="header__menu">
+      <ul>
+        <li>
+          <%= link_to t(".all_orders"), orders_path %>
+        </li>
+        <% Order.statuses.each do |key, val| %>
+          <li>
+            <%= link_to t("enums.order_status.#{key}"), show_order_by_status_path(val) %>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
+    <h4><%= t "orders.index.all_order_title" %></h4>
+    <br>
+    <div class="list_user_order">
+      <% if @orders %>
+        <% @orders.each do |one_order| %>
+          <%= render partial: "item_order_history", locals: {order: one_order} %>
+        <% end %>
+      <% else %>
+        <%= t ".no_order" %>
+      <% end %>
+    </div>
+    <%== pagy_bootstrap_nav(@pagy) %>
+  </div>
+</div>

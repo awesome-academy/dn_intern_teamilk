@@ -49,9 +49,67 @@
 
 .action-order {
   display: flex;
-  justify-content: center;
-
   form {
     margin-left: 10px;
+  }
+  a {
+    margin-right: 10px;
+  }
+}
+
+.list-product {
+  .panel-title {
+    .status_of_order {
+      color: red;
+    }
+  }
+}
+
+.admin_order_pages {
+  tr {
+    .color-status-waiting {
+      font-weight: bold;
+      background-color: #ffff00;
+    }
+    .color-status-making {
+      font-weight: bold;
+      background-color: #13e508;
+    }
+    .color-status-delivering {
+      font-weight: bold;
+      background-color: #10b5e7;
+    }
+    .color-status-delivered {
+      font-weight: bold;
+      background-color: #514883;
+    }
+    .color-status-rejected {
+      font-weight: bold;
+      background-color: #ff1900;
+    }
+  }
+
+}
+
+.list_button_show_order {
+  .color-status-waiting {
+    font-weight: bold;
+    background-color: #ffff00;
+  }
+  .color-status-making {
+    font-weight: bold;
+    background-color: #13e508;
+  }
+  .color-status-delivering {
+    font-weight: bold;
+    background-color: #10b5e7;
+  }
+  .color-status-delivered {
+    font-weight: bold;
+    background-color: #514883;
+  }
+  .color-status-rejected {
+    font-weight: bold;
+    background-color: #ff1900;
   }
 }

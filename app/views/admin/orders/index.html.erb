@@ -1,0 +1,38 @@
+<div class="main">
+  <nav class="header__menu">
+    <ul>
+      <li>
+        <%= link_to t(".all_orders"), admin_orders_path %>
+      </li>
+      <% Order.statuses.each do |key, val| %>
+        <li>
+          <%= link_to t("enums.order_status.#{key}"), admin_show_order_by_status_path(val) %>
+        </li>
+      <% end %>
+    </ul>
+  </nav>
+
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover">
+      <thead>
+        <tr>
+          <th><%= t "orders.index.ID" %></th>
+          <th><%= t "orders.index.name" %></th>
+          <th><%= t "orders.index.product" %></th>
+          <th><%= t "orders.index.order_date" %></th>
+          <th><%= t "orders.index.status" %></td>
+          <th><%= t "orders.index.action" %></td>
+        </tr>
+      </thead>
+      <tbody class="admin_order_pages">
+        <% if @orders %>
+          <% @orders.each do |one_order| %>
+            <%= render partial: "item_order", locals: {order: one_order} %>
+          <% end %>
+        <% else %>
+          <%= t ".no_order" %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

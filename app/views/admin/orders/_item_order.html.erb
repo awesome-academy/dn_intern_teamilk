@@ -1,0 +1,24 @@
+<tr>
+  <td><%= link_to order.id, admin_order_path(order) %></td>
+  <td><%= order.address.name %> / <%= order.address.phone %></td>
+  <td>
+    <% order.order_details.each do |odt| %>
+      <%= odt.product_detail.product.name %><br>
+    <% end %>
+  </td>
+  <td><%= order.created_at.strftime("%H:%M %d-%m-%Y") %></td>
+  <td><span class="btn color-status-<%= order.status %>"><%= t "enums.order_status.#{order.status}" %><span></td>
+  <% case order.status.to_sym %>
+  <% when :waiting %>
+    <td class="color-status-making"><%= render partial: "status_button", locals: {order: order, status: :making} %></td>
+    <td class="color-status-rejected"><%= render partial: "status_button", locals: {order: order, status: :rejected} %></td>
+  <% when :making %>
+    <td class="color-status-delivering"><%= render partial: "status_button", locals: {order: order, status: :delivering} %></td>
+    <td class="color-status-rejected"><%= render partial: "status_button", locals: {order: order, status: :rejected} %></td>
+  <% when :delivering %>
+    <td class="color-status-delivered"><%= render partial: "status_button", locals: {order: order, status: :delivered} %></td>
+    <td class="color-status-rejected"><%= render partial: "status_button", locals: {order: order, status: :rejected} %></td>
+  <% when :delivered %>
+    <td class="color-status-rejected"><%= render partial: "status_button", locals: {order: order, status: :rejected} %></td>
+  <% end %>
+</tr>

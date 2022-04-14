@@ -1,0 +1,50 @@
+<div class="list-product box-order panel panel-info" id="item_history_<%= order.id %>">
+  <div class="panel-heading">
+    <%= order.created_at.strftime("%d-%m-%Y") %> |
+    <%= order.address_name %>
+    <div class="panel-title pull-right">
+      <span class="status_of_order"><%= t("enums.order_status.#{order.status}") %></span>
+    </div>
+  </div>
+  <div class="panel-body">
+    <table class="table" style="width: 100%">
+      <colgroup>
+        <col span="1" style="width: 35%;">
+        <col span="1" style="width: 15%;">
+        <col span="1" style="width: 15%;">
+        <col span="1" style="width: 15%;">
+        <col span="1" style="width: 20%;">
+      </colgroup>
+      <thead>
+        <tr>
+          <th scope="col" class="text-uppercase header"><%= t "orders.index.product_name" %></th>
+          <th scope="col" class="text-uppercase"><%= t "orders.index.quantity" %></th>
+          <th scope="col" class="text-uppercase"><%= t "orders.index.total" %></th>
+          <th scope="col" class="text-uppercase"><%= t "orders.index.order_date" %></th>
+          <th scope="col" class="text-uppercase"><%= t "orders.index.action" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <% order.order_details.each do |odt| %>
+              <%= odt.product_detail.product_name %><br>
+            <% end %>
+          </td>
+          <td><%= order.order_details.sum("quantity") %></td>
+          <td><%= number_to_currency(caculator_price_in_order order) %></td>
+          <td><%= l(order.created_at, format: :long) %></td>
+          <td class="action-order">
+            <%= link_to t("orders.index.show"), order, class: "btn btn-primary" %>
+            <% if order.waiting? %>
+              <%= link_to t("orders.index.cancel"), order, class: "btn btn-danger", data: { confirm: t("shared.are_u_sure") }, method: :delete %>
+            <% end %>
+            <% if order.delivered? %>
+              <%= link_to t("orders.index.success"), order, class: "btn btn-success", data: { confirm: t("shared.are_u_sure") }, :method => :put %>
+            <% end %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
