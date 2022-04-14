@@ -5,4 +5,8 @@ class Admin::ProductsController < Admin::BaseController
     @pagy, @pagy_children_products =
       pagy @list_product.children_products, items: Settings.number.digits_6
   end
+
+  def create
+    @product = Product.new
+  end
 end

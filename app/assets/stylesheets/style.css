@@ -3497,3 +3497,22 @@ ol {
 .search_product_button{
 	margin-left: 20px;
 }
+.div_admin_add_products{
+	margin: 0 auto;
+	text-align: left;
+	width: 50%;
+	margin-top: 2%;
+  border-collapse: separate;
+ 	border-spacing: 0 10px;
+ 	table-layout: fixed;
+ 	list-style: none;
+}
+.div_admin_add_products_image{
+	padding: auto;
+}
+.table_center_row a{
+	color: black;
+}
+.table_center_row a :hover{
+	color: #7fad39;
+}

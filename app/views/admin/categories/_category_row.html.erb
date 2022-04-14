@@ -3,9 +3,13 @@
     <h5><%= category.name %></h5>
   </td>
   <td>
-    <i class="fa fa-pencil-square-o fa-2x"></i>
+    <%= link_to (root_path) do %>
+      <i class="fa fa-pencil-square-o fa-2x"></i>
+    <% end %>
   </td>
   <td class="shoping__cart__total">
+    <%= link_to product_path(category), method: :delete do %>
     <i class="fa fa-times fa-2x"></i>
+    <% end %>
   </td>
 </tr>

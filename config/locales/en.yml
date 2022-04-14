@@ -59,6 +59,7 @@ en:
       wrong_pass: "Password is wrong"
   carts:
     title: "Cart"
+    needs_login: "Please Login!"
     create:
       add_item_to_cart_succes: "Add to cart successfully"
       not_found_product: "No products found"
@@ -84,6 +85,8 @@ en:
     product_not_found: "Product not found"
     parent_product_not_found: "Can not load category"
     children_product_not_found: "Can not load list products"
+    image_wrong_format: "Wrong image format"
+    image_big_size: "Size too big (5MB)"
   shared:
     category: "Category"
     sort_by: "Sort By"
@@ -113,6 +116,10 @@ en:
       edit: "Edit"
       change_size: "Change size"
       delete: "Delete"
+      product_del_success: "Delete product successed"
+      product_del_failed: "Delete product failed"
+      add_success: "Add product successed"
+      add_faild: "Add product failed"
     category:
       product: "Products"
       add_new_category: "add new category"

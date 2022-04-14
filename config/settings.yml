@@ -16,3 +16,6 @@ image:
 number:
   digits_6: 6
   digits_1: 1
+product:
+  image_format: ["image/jpeg", "image/gif", "image/png"]
+  size_5: 5

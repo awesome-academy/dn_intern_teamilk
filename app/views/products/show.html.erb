@@ -5,7 +5,7 @@
       <div class="col-lg-6 col-md-6">
         <div class="product__details__pic">
           <div class="product__details__pic__item">
-              <%= image_tag "img/img_product/#{@product.image}", alt: "" , class: "product__details__pic__item--large" %>
+            <%= image_tag url_for(@product.image), alt: "" , class: "product__details__pic__item--large" %>
           </div>
         </div>
       </div>
@@ -21,14 +21,20 @@
           </div>
           <div class="product__details__price" id="price">
             <span class="price_of_product_details">
-              <%= number_to_currency(@product_details.first.price,
-                                     unit: "")%> VND
+              <% unless @first_price.nil? %>
+                <%= number_to_currency(@first_price, unit: "" )%> VND
+              <% else %>
+                <%= t "product.out_of_stock" %>
+              <% end %>
             </span>
           </div>
-
-          <%= form_tag cart_path do %>
-            <%= hidden_field_tag :product_detail_id, @product_details.first.id, id: "product_detail_id" %>
-            <%= submit_tag t("product.add_cart"), class: "primary-btn" %>
+          <% if @load_first.present? && @load_first.quantity.positive? %>
+            <div class="btn_add_to_cart">
+              <%= form_tag cart_path do %>
+                <%= hidden_field_tag :product_detail_id, @product_details_id, id: "product_detail_id" %>
+                <%= submit_tag t("product.add_cart"), class: "primary-btn" %>
+              <% end %>
+            </div>
           <% end %>
           <ul>
             <li><b><%= t "product.status" %></b> <span id="status"><%= @status_quantity %></span></li>

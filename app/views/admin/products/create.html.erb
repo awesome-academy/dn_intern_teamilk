@@ -1,0 +1,24 @@
+<%= form_for @product do |f| %>
+  <ul class="div_admin_add_products">
+    <li><%= render "shared/error_messages", object: f.object %></li>
+    <li>
+      <div class="field">
+        <%= f.text_area :name, placeholder: "name" %>
+      </div>
+    </li>
+    <li>
+      <span class="div_admin_add_products_image">
+      <%= f.file_field :image, accept: t("img_format_html"), class: "div_admin_add_products_image"  %>
+      </span>
+    </li>
+    <li>
+      <div class="field">
+        <%= f.text_area :description, placeholder: "description" %>
+      </div>
+    </li>
+    <li>
+      <%= f.collection_select :product_id, Product.all.parent_products, :id, :name %>
+    </li>
+    <li><%= f.submit "add", class: "site-btn" %></li>
+  </ul>
+<% end %>

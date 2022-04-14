@@ -6,7 +6,7 @@
           <div class="hero__search__form">
             <%= form_tag(products_path, method: :get) do %>
               <%= text_field_tag :name, nil,
-                                 placeholder: t("shared.what_do_u_need") %>
+                                 placeholder: search_text %>
               <%= button_tag t("shared.search"), class: "site-btn" %>
             <% end %>
           </div>
