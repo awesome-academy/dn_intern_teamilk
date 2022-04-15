@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
     return if logged_in?
 
     store_location
-    flash[:danger] = t "noti.login.needs_login"
+    flash[:danger] = t "carts.needs_login"
     redirect_to login_url
   end
 

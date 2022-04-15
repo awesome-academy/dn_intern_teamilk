@@ -1,15 +1,21 @@
 <tr>
   <td class="shoping__cart__item">
-    <%= image_tag load_image_path_product(product.id), class: "product_row_image" %>
+    <%= image_tag url_for(product.image), class: "product_row_image" if product.image.attached? %>
     <h5><%= product.name %></h5>
   </td>
   <td>
-    <i class="fa fa-pencil-square-o fa-2x"></i>
+    <%= link_to (root_path) do %>
+      <i class="fa fa-pencil-square-o fa-2x"></i>
+    <% end %>
   </td>
   <td class="shoping__cart__quantity">
-    <i class="fa fa-bars fa-2x"></i>
+    <%= link_to (root_path) do %>
+      <i class="fa fa-bars fa-2x"></i>
+    <% end %>
   </td>
   <td class="shoping__cart__total">
-    <i class="fa fa-times fa-2x"></i>
+    <%= link_to product_path(product), method: :delete do %>
+      <i class="fa fa-times fa-2x"></i>
+    <% end %>
   </td>
 </tr>

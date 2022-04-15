@@ -8,7 +8,7 @@ module CartsHelper
   end
 
   def load_image_path_product product_id
-    "img/img_product/" + Product.find_by(id: product_id).image
+    url_for(Product.find_by(id: product_id).image)
   end
 
   def cart_total_price_in_cart

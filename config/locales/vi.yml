@@ -59,6 +59,7 @@ vi:
       wrong_pass: "Mật khẩu không đúng"
   carts:
     title: "Giỏ hàng"
+    needs_login: "Vui lòng đăng nhập!"
     create:
       add_item_to_cart_succes: "Thêm vào giỏ hàng thành công"
       not_found_product: "Không tìm thấy sản phẩm"
@@ -84,6 +85,8 @@ vi:
     product_not_found: "Không tìm thấy sản phẩm"
     parent_product_not_found: "Không thể tài Danh mục"
     children_product_not_found: "Không tìm thấy danh sách sản phẩm"
+    image_wrong_format: "Sai định dạng ảnh"
+    image_big_size: "Kích thước ảnh quá lớn (5MB)"
   shared:
     category: "Danh mục"
     sort_by: "Sắp xếp theo"
@@ -113,6 +116,10 @@ vi:
       edit: "Sửa"
       change_size: "Thay đổi kích thước"
       delete: "Xóa"
+      product_del_success: "Xóa sản phẩm thành công"
+      product_del_failed: "Xóa sản phẩm thất bại"
+      add_success: "Thêm sản phẩm thành công"
+      add_faild: "Thêm sản phẩm thất bại"
     category:
       product: "Sản phẩm"
       add_new_category: "Thêm danh mục mới"

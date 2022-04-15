@@ -1,0 +1,17 @@
+<%= form_for @product do |f| %>
+  <ul class="div_admin_add_products">
+    <li><%= render "shared/error_messages", object: f.object %></li>
+    <li>
+      <div class="field">
+        <%= f.text_area :name, placeholder: "name" %>
+      </div>
+    </li>
+    <li>
+      <div class="field">
+        <%= f.text_area :description, placeholder: "description" %>
+      </div>
+    </li>
+    <%= hidden_field_tag :product_id, nil %>
+    <li><%= f.submit "add", class: "site-btn" %></li>
+  </ul>
+<% end %>
