@@ -12,8 +12,6 @@ class OrderDetail < ApplicationRecord
   def update_quantiy_product_details
     if order.waiting?
       product_detail.quantity = product_detail.quantity - quantity
-    elsif order.rejected?
-      product_detail.quantity = product_detail.quantity + quantity
     end
     product_detail.save
   end
