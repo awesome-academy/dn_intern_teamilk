@@ -54,3 +54,5 @@ gem "bootstrap", "~> 4.4.1"
 gem "jquery-rails"
 
 gem "font-awesome-sass", "~> 4.7"
+
+gem "rake", "~> 13.0", ">= 13.0.6"

@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   before_action :get_parent_products,
-                :get_list_custom_childern_product, only: :index
-  before_action :find_product, only: :show
+                :list_product_final_custom, only: :index
+  before_action :find_product, only: %i(show destroy)
 
   def index
     @pagy, @pagy_children_products =
@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
     if @product.save
       flash[:success] = t "admin.products.add_success"
     else
-      flash[:danger] = "admin.products.add_faild"
+      flash[:danger] = t "admin.products.add_faild"
     end
     load_after_action
   end
@@ -27,7 +27,6 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product = Product.find_by id: params[:id]
     if @product.destroy
       flash[:success] = t "admin.products.product_del_success"
     else
@@ -66,12 +65,12 @@ class ProductsController < ApplicationController
     redirect_to root_path
   end
 
-  def get_list_custom_childern_product
+  def list_product_final_custom
     if params[:sort_id]
-      get_flag_seach_product_cookies
-      get_flag_filter_product
+      get_list_product_by_cookies
+      list_product_after_filter
     else
-      get_flag_seach_product_params
+      get_list_product_by_params
     end
     return unless @children_products.empty?
 
@@ -99,7 +98,7 @@ class ProductsController < ApplicationController
     cookies.delete :content_flag
   end
 
-  def get_flag_seach_product_params
+  def get_list_product_by_params
     if params[:name]
       get_children_product_by_name params[:name]
     elsif params[:parent_id]
@@ -109,7 +108,7 @@ class ProductsController < ApplicationController
     end
   end
 
-  def get_flag_seach_product_cookies
+  def get_list_product_by_cookies
     if cookies[:id_flag] == "1"
       get_children_product_by_name cookies[:content_flag]
     elsif cookies[:id_flag] == "2"
@@ -119,7 +118,7 @@ class ProductsController < ApplicationController
     end
   end
 
-  def get_flag_filter_product
+  def list_product_after_filter
     @children_products = if params[:sort_id] == "1"
                            @children_products.order(:name)
                          elsif params[:sort_id] == "2"

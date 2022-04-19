@@ -376,6 +376,7 @@ DEPENDENCIES
   rails (~> 6.1.4, >= 6.1.4.6)
   rails-controller-testing
   rails-i18n (~> 6.0)
+  rake (~> 13.0, >= 13.0.6)
   rspec-rails (~> 4.0.1)
   rubocop (~> 0.74.0)
   rubocop-checkstyle_formatter

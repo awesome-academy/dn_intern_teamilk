@@ -11,6 +11,7 @@ class Product < ApplicationRecord
                                    message: "product.image_wrong_format"},
                     size:         {less_than: Settings.product.size_5.megabytes,
                                    message: "product.image_big_size"}
+  validates :name, presence: true
 
   scope :parent_products, ->{where(product_id: nil)}
   scope :children_products, ->{where.not(product_id: nil)}
