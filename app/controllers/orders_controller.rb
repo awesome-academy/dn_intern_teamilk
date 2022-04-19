@@ -27,7 +27,6 @@ class OrdersController < ApplicationController
 
   def create
     @new_order = current_user.orders.new params_new_order
-
     new_order_details
     ActiveRecord::Base.transaction do
       @new_order.save!
@@ -35,7 +34,7 @@ class OrdersController < ApplicationController
     cart_current.clear
     flash[:success] = t ".success_order"
     redirect_to root_url
-  rescue NoMethodError
+  rescue ActiveRecord::RecordInvalid
     flash[:danger] = t ".has_err"
     redirect_to new_order_url
   end
@@ -100,7 +99,6 @@ class OrdersController < ApplicationController
   def change_status
     ActiveRecord::Base.transaction do
       @order.update!(status: 5)
-      cart_current.clear
     end
     flash[:success] = t ".success_order"
     redirect_to orders_url

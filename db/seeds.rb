@@ -23,21 +23,21 @@
 #                        product_id: Product.pluck(:id).sample)
 # end
 
-# Address.create(
-#   name: "Hoài Thương",
-#   address: "13F, Keangnam Hanoi Landmark Tower, Pham Hung, Nam Tu Liem, Hanoi",
-#   phone: "0123456789",
-#   default_address: true,
-#   user_id: 1
-# )
+Address.create(
+  name: "Hoài Thương",
+  address: "13F, Keangnam Hanoi Landmark Tower, Pham Hung, Nam Tu Liem, Hanoi",
+  phone: "0123456789",
+  default_address: true,
+  user_id: 1
+)
 
-# Address.create(
-#   name: "Hoài Nhớ",
-#   address: "4F, FHome Building, 16 Ly Thuong Kiet Str., Hai Chau district, Da Nang",
-#   phone: "0123456789",
-#   default_address: false,
-#   user_id: 1
-# )
+Address.create(
+  name: "Hoài Nhớ",
+  address: "4F, FHome Building, 16 Ly Thuong Kiet Str., Hai Chau district, Da Nang",
+  phone: "0123456789",
+  default_address: false,
+  user_id: 1
+)
 
 # User.create(name: "Khach quen", email: "kq1@gmail.com",
 #             password: "123456", password_confirmation: "123456",
@@ -46,6 +46,6 @@
 # User.create(name: "Super Admin", email: "admin@gmail.com",
 #             password: "123456", password_confirmation: "123456",
 #             activated: true, role: 1, activated_at: Time.zone.now)
-User.create(name: "Adam Kaid", email: "kais@gmail.com",
-            password: "123456", password_confirmation: "123456",
-            activated: true, activated_at: Time.zone.now)
+# User.create(name: "Adam Kaid", email: "kais@gmail.com",
+#             password: "123456", password_confirmation: "123456",
+#             activated: true, activated_at: Time.zone.now)
