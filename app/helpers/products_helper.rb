@@ -11,4 +11,8 @@ module ProductsHelper
     @first_price = @load_first.price
     @product_details_id = @product_details.first.id
   end
+
+  def load_image_url product
+    url_for(product.image) if product.image.attached?
+  end
 end
