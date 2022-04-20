@@ -8,9 +8,10 @@ class Product < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_one_attached :image
   validates :image, content_type: {in: Settings.product.image_format,
-                                   message: "product.image_wrong_format"},
+                                   message:
+                                    I18n.t("product.image_wrong_format")},
                     size:         {less_than: Settings.product.size_5.megabytes,
-                                   message: "product.image_big_size"}
+                                   message: I18n.t("product.image_big_size")}
   validates :name, presence: true
 
   scope :parent_products, ->{where(product_id: nil)}
