@@ -2,7 +2,7 @@ class Admin::OrdersController < Admin::BaseController
   before_action :find_order_by_id, only: %i(update show)
 
   def index
-    @orders = Order.newest
+    @orders = Order.sort_by_day
   end
 
   def admin_show_by_status
