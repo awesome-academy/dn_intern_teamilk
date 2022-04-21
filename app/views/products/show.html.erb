@@ -1,4 +1,3 @@
-<!-- <%= load_fisr_product %> -->
 <section class="product-details spad">
   <div class="container">
     <div class="row">
@@ -21,23 +20,19 @@
           </div>
           <div class="product__details__price" id="price">
             <span class="price_of_product_details">
-              <% unless @first_price.nil? %>
-                <%= number_to_currency(@first_price, unit: "" )%> VND
-              <% else %>
-                <%= t "product.out_of_stock" %>
-              <% end %>
+              <%= get_first_price %>
             </span>
           </div>
-          <% if @load_first.present? && @load_first.quantity.positive? %>
+          <% if check_product_details? %>
             <div class="btn_add_to_cart">
               <%= form_tag cart_path do %>
-                <%= hidden_field_tag :product_detail_id, @product_details_id, id: "product_detail_id" %>
+                <%= hidden_field_tag :product_detail_id, get_first_size_of_product.id , id: "product_detail_id" %>
                 <%= submit_tag t("product.add_cart"), class: "primary-btn" %>
               <% end %>
             </div>
           <% end %>
           <ul>
-            <li><b><%= t "product.status" %></b> <span id="status"><%= @status_quantity %></span></li>
+            <li><b><%= t "product.status" %></b> <span id="status"><%= get_quantity_status_of_first_size %></span></li>
             <li><b><%= t "product.size" %></b>
               <div class="wrapper_product_details">
                 <% @product_details.each do |product_detail| %>
