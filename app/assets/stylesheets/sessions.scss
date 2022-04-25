@@ -5,7 +5,7 @@
 
 // form sign in, sign out
 
-.user_login_class {
+.user_login_class, .user_signup_class {
   height: 50vh;
   position: relative;
 
@@ -61,10 +61,20 @@
       margin-top: -20px;
     }
 
-    #session_remember_me {
+    #user_remember_me {
       width: auto;
       margin-left: 0;
       margin-top: -10px;
     }
+  }
+}
+
+.user_signup_class {
+  height: 90vh;
+
+  #user_remember_me {
+    width: auto;
+    margin-left: 0;
+    margin-top: -10px;
   }
 }
