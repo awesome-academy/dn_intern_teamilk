@@ -3,9 +3,9 @@ Rails.application.routes.draw do
     root to: "pages#home"
     get "home", to: "pages#home"
     resources :products
-    get "login", to: "sessions#new"
-    post "login", to: "sessions#create"
-    delete "logout", to: "sessions#destroy"
+    # get "login", to: "sessions#new"
+    # post "login", to: "sessions#create"
+    # delete "logout", to: "sessions#destroy"
     resource :cart
     namespace :admin do
       get "/", to: "base#index"
@@ -19,6 +19,14 @@ Rails.application.routes.draw do
 
     resources :orders
     get "order/status/:id_status", to: "orders#show_by_status", as: "show_order_by_status"
+    devise_for :users
+
+    as :user do
+      get "login" => "devise/sessions#new"
+      post "login" => "devise/sessions#create"
+      delete "logout" => "devise/sessions#destroy"
+      get "/signup", to: "devise/registrations#new"
+    end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

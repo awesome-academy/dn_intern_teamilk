@@ -6,6 +6,7 @@ gem "bcrypt", "~> 3.1", ">= 3.1.16"
 gem "bootsnap", ">= 1.4.4", require: false
 gem "bootstrap-sass", "3.4.1"
 gem "config"
+gem "devise"
 gem "faker", "~> 1.6", ">= 1.6.6"
 gem "figaro"
 gem "i18n-js"

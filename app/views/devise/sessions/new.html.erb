@@ -2,22 +2,23 @@
 
 <div class="user_login_class">
   <div class="form_login">
-    <h1><%= t ".login" %></h1>
-    <%= form_for :session, url: login_path do |f| %>
+    <h1><%= t ".title" %></h1>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <%= f.label :email %>
       <%= f.email_field :email, required: :true %>
       <%= f.label :password, t(".password_label") %>
       <%= link_to t(".forgot_password"), "#" %>
       <%= f.password_field :password, required: :true %>
-      <%= f.label :remember_me, class: "checkbox inline" do %>
-        <%= f.check_box :remember_me %>
-        <span><%= t ".remember_me" %></span>
+
+      <% if devise_mapping.rememberable? %>
+        <%= f.label :remember_me, class: "checkbox inline" do %>
+          <%= f.check_box :remember_me %>
+          <span><%= t ".remember_me" %></span>
+        <% end %>
       <% end %>
+
       <%= f.submit t(".submit"), class: "btn btn-primary" %>
     <% end %>
-    <p>
-      <%= t ".no_account" %>
-      <%= link_to t(".sign_up_now") %>
-    </p>
+    <%= render "devise/shared/links" %>
   </div>
 </div>
