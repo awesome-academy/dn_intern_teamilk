@@ -162,3 +162,7 @@ en:
       delivered: "Delivered"
       success: "Success"
       rejected: "Rejected"
+  devise:
+    shared:
+      no_receive_confirmation: "Didn't receive confirmation instructions?"
+      no_receive_unlock: "Didn't receive unlock instructions?"

@@ -3,7 +3,7 @@
 vi:
   devise:
     confirmations:
-      confirmed: Xác nhận tài khoản thành công! Bạn hiện đang đăng nhập.
+      confirmed: Xác nhận tài khoản thành công!
       send_instructions: Bạn sẽ nhận được email hướng dẫn xác nhận tài khoản trong vài phút nữa.
       send_paranoid_instructions: Nếu email của bạn có trong hệ thống, bạn sẽ nhận được email hướng dẫn xác nhận tài khoản trong một vài phút nữa.
       new:
@@ -19,27 +19,30 @@ vi:
       unauthenticated: Bạn cần phải đăng nhập hoặc đăng ký trước khi tiếp tục.
       unconfirmed: Bạn cần phải xác nhận tài khoản trước khi tiếp tục.
     mailer:
+      welcome: "Chào mừng"
       confirmation_instructions:
+        confirm: "Xác nhận tài khoản"
+        content: "Bạn có thể xác nhận email tài khoản của mình thông qua liên kết bên dưới"
         subject: Hướng dẫn xác nhận tài khoản
-        activity: Bấm vào link dưới để kích hoạt tài khoản
-        confirm: Xác nhận tài khoản
       email_changed:
         p1: Email của bạn sắp được thay đổi thành
         p2: Email của bạn đã được thay đổi thành
       password_change:
-        p1: Mật khẩu của bạn đã được thay đổi
+        p1: "Mật khẩu của bạn đã được thay đổi"
       reset_password_instructions:
-        subject: Hướng dẫn thiết lập lại mật khẩu
-        p1: Đổi mật khẩu bằng cách ấn vào link dưới
-        p2: Bỏ qua email nếu đó không phải bạn
-        p3: Mật khẩu sẽ không thay đổi nếu bạn không bấm vào link trên
-        change_password: Đổi mật khẩu
+        change_pass: "Thay đổi mật khẩu"
+        didnt_request: "Nếu bạn không yêu cầu điều này, vui lòng bỏ qua email này."
+        request_change: "Ai đó đã yêu cầu một liên kết để thay đổi mật khẩu của bạn. Bạn có thể làm điều này thông qua liên kết bên dưới"
+        subject: "Hướng dẫn thiết lập lại mật khẩu"
+        wont_change: "Mật khẩu của bạn sẽ không thay đổi cho đến khi bạn truy cập vào liên kết ở trên và tạo một mật khẩu mới."
       unlock_instructions:
-        subject: Hướng dẫn mở khóa tài khoản
-        unlock: Mở khóa tài khoản
+        subject: "Hướng dẫn mở khóa tài khoản"
+        account_locked: "Tài khoản của bạn đã bị khóa do có quá nhiều lần đăng nhập không thành công."
+        click_link: "Nhấp vào liên kết bên dưới để mở khóa tài khoản của bạn:"
+        unlock: "Mở khóa tài khoản của tôi"
     omniauth_callbacks:
-      failure: Không thể đăng nhập qua tài khoản %{kind} vì "%{reason}".
-      success: Đăng nhập thành công bằng tài khoản %{kind}.
+      failure: Không thể đăng nhập qua tài khoản Google vì "%{reason}".
+      success: "Đăng nhập thành công bằng tài khoản Google."
     passwords:
       no_token: Bạn chỉ có thể truy cập trang này từ email đặt lại mật khẩu. Nếu bạn truy cập từ email đặt lại mật khẩu, xin chắc chắn rằng bạn dùng đường dẫn đầy đủ trong email.
       send_instructions: Bạn sẽ nhận được email hướng dẫn thiết lập lại mật khẩu trong vài phút nữa.
@@ -47,10 +50,10 @@ vi:
       updated: Đổi mật khẩu thành công! Bạn hiện đang đăng nhập.
       updated_not_active: Mật khẩu đã được đổi thành công.
       edit:
-        title: Thay đổi mật khẩu
-        min_char: ký tự tối thiểu
+        title: "Thay đổi mật khẩu"
+        min_char: "ký tự tối thiểu"
       new:
-        title: Gửi tôi hướng dẫn đặt lại mật khẩu
+        forgot_pass: "Gửi hướng dẫn đặt lại mật khẩu"
     registrations:
       destroyed: Tạm biệt! Tài khoản của bạn đã được xóa. Chúng tôi hy vọng sẽ sớm gặp lại bạn.
       signed_up: Xin chào! Bạn đã đăng ký thành công.
@@ -86,9 +89,7 @@ vi:
         remember_me: "Lưu mật khẩu"
         submit: "Đăng nhập"
         title: "Đăng nhập"
-    shared:
-      no_receive_confirmation: "Không nhận được hướng dẫn xác nhận?"
-      no_receive_unlock: "Không nhận được hướng dẫn mở khóa?"
+        login_with_gg: "Đăng nhập bằng google"
     unlocks:
       send_instructions: Bạn sẽ nhận được email hướng dẫn cách mở khóa tài khoản trong vài phút nữa.
       send_paranoid_instructions: Nếu tài khoản của bạn tồn tại, bạn sẽ nhận được email hướng dẫn cách mở khóa tài khoản trong vài phút nữa.

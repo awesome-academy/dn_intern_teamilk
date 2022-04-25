@@ -162,3 +162,7 @@ vi:
       delivered: "Đã giao hàng"
       success: "Thành công"
       rejected: "Hủy đơn"
+  devise:
+    shared:
+      no_receive_confirmation: "Không nhận được hướng dẫn xác nhận?"
+      no_receive_unlock: "Không nhận được hướng dẫn mở khóa?"

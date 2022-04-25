@@ -46,3 +46,6 @@ config/credentials.yml.enc
 test
 
 /storage
+
+# Ignore application configuration
+/config/application.yml
