@@ -4,6 +4,8 @@ class CartsController < ApplicationController
   before_action :check_quantity_exceeds_amount, only: :update
   skip_before_action :verify_authenticity_token, only: :update
 
+  authorize_resource class: CartsController
+
   def show
     @products = {}
     cart_current.each do |product_detail_id, quantity|

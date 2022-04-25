@@ -3509,10 +3509,15 @@ ol {
 }
 .div_admin_add_products_image{
 	padding: auto;
+	margin-bottom: 15px;
 }
 .table_center_row a{
 	color: black;
 }
 .table_center_row a :hover{
 	color: #7fad39;
+}
+
+#img_prev {
+	max-width: 250px;
 }

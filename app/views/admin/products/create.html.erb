@@ -8,7 +8,9 @@
     </li>
     <li>
       <span class="div_admin_add_products_image">
-      <%= f.file_field :image, accept: t("img_format_html"), class: "div_admin_add_products_image"  %>
+        <p id="pls_sel">Select a picture:</p>
+        <%= image_tag "", id: "img_prev"%>
+        <%= f.file_field :image, accept: t("img_format_html"), class: "div_admin_add_products_image" %>
       </span>
     </li>
     <li>

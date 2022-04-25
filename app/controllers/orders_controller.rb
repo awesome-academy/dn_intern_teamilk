@@ -4,6 +4,8 @@ class OrdersController < ApplicationController
   before_action :find_order_by_id, only: %i(show destroy update)
   before_action :change_status, only: :destroy
 
+  authorize_resource
+
   def index
     @pagy, @orders = pagy Order.list_orders_of_user(current_user.id)
                                .sort_by_day,

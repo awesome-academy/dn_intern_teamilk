@@ -7,6 +7,7 @@ RSpec.describe ProductsController, type: :controller do
   let!(:product1) {FactoryBot.create(:product, product_id: category1.id)}
   let!(:product2) {FactoryBot.create(:product, name: "Product2", product_id: category1.id)}
   let!(:product3) {FactoryBot.create(:product, name: "Product3", product_id: category1.id)}
+  let!(:admin) {FactoryBot.create(:user, role: 1)}
 
   describe "GET #index" do
     it "load template index" do
@@ -191,13 +192,15 @@ RSpec.describe ProductsController, type: :controller do
   describe "POST #create" do
     context "when create product successed" do
       it "display flash successed" do
-        post :create, params: {product: {name: "Test1", description: nil, product_id: nil}}
+        post :create, params: {product: {name: "Test1", description: nil, product_id: nil}},
+                      session: {user_id: admin.id}
         expect(flash[:success]).to be == I18n.t("admin.products.add_success")
       end
 
       it "add new products into database" do
         count_product = Product.count
-        post :create, params: {product: {name: "Test1", description: nil, product_id: nil}}
+        post :create, params: {product: {name: "Test1", description: nil, product_id: nil}},
+                      session: {user_id: admin.id}
         expect(count_product + 1).to be == Product.count
         expect(assigns(:product)).to be == Product.last
       end
@@ -205,19 +208,22 @@ RSpec.describe ProductsController, type: :controller do
 
     context "when create failed" do
       it "display flash failed" do
-        post :create, params: {product: {name: "", description: nil, product_id: nil}}
+        post :create, params: {product: {name: "", description: nil, product_id: nil}},
+                      session: {user_id: admin.id}
         expect(flash[:danger]).to be == I18n.t("admin.products.add_faild")
       end
     end
 
     context "redirect after create" do
       it "add product and rediect to admin category" do
-        post :create, params: {product: {name: "Test1", description: nil, product_id: nil}}
+        post :create, params: {product: {name: "Test1", description: nil, product_id: nil}},
+                      session: {user_id: admin.id}
         expect(response).to redirect_to(admin_categories_path)
       end
 
-      it "ad category and rediect to admin product" do
-        post :create, params: {product: {name: "Test1", description: nil, product_id: category1.id}}
+      it "add category and rediect to admin product" do
+        post :create, params: {product: {name: "Test1", description: nil, product_id: category1.id}},
+                      session: {user_id: admin.id}
         expect(response).to redirect_to(admin_products_path)
       end
     end
@@ -247,13 +253,13 @@ RSpec.describe ProductsController, type: :controller do
   describe "DELETE #destroy" do
     context "when delete successed" do
       it "display flash successed" do
-        delete :destroy, params: {id: product1.id}
+        delete :destroy, params: {id: product1.id}, session: {user_id: admin.id}
         expect(flash[:success]).to be == I18n.t("admin.products.product_del_success")
       end
 
       it "delete from databases" do
         count_product = Product.count
-        delete :destroy, params: {id: product1.id}
+        delete :destroy, params: {id: product1.id}, session: {user_id: admin.id}
         expect(count_product - 1).to be == Product.count
         expect(Product.find_by id: product1.id).to be == nil
       end
@@ -263,19 +269,19 @@ RSpec.describe ProductsController, type: :controller do
       it "display flash failed" do
         allow(Product).to receive(:find_by).and_return(product1)
         allow(product1).to receive(:destroy).and_return(false)
-        delete :destroy, params: {id: product1.id}
+        delete :destroy, params: {id: product1.id}, session: {user_id: admin.id}
         expect(flash[:danger]).to be == I18n.t("admin.products.product_del_failed")
       end
     end
 
     context "redirect after delete" do
       it "delete category and rediect to admin category" do
-        delete :destroy, params: {id: category3.id}
+        delete :destroy, params: {id: category3.id}, session: {user_id: admin.id}
         expect(response).to redirect_to(admin_categories_path)
       end
 
       it "delete product and rediect to admin product" do
-        delete :destroy, params: {id: product1.id}
+        delete :destroy, params: {id: product1.id}, session: {user_id: admin.id}
         expect(response).to redirect_to(admin_products_path)
       end
     end

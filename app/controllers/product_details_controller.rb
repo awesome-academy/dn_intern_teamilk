@@ -1,5 +1,8 @@
 class ProductDetailsController < ApplicationController
   before_action :find_product_detail, only: :show
+
+  authorize_resource
+
   def show
     respond_to do |format|
       format.html{redirect_to request.referer}
