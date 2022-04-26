@@ -13,7 +13,6 @@ class SessionsController < ApplicationController
   end
 
   private
-
   def check_activated
     remember_me = params[:session][:remember_me]
     if @user.activated

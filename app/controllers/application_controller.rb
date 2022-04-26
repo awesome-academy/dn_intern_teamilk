@@ -3,6 +3,12 @@ class ApplicationController < ActionController::Base
 
   include SessionsHelper
   include CartsHelper
+  include Pagy::Backend
+
+  rescue_from CanCan::AccessDenied do
+    flash[:warning] = t "admin_index.can_not_accesss"
+    redirect_to root_url
+  end
 
   private
 
@@ -21,6 +27,4 @@ class ApplicationController < ActionController::Base
     flash[:danger] = t "carts.needs_login"
     redirect_to login_url
   end
-
-  include Pagy::Backend
 end

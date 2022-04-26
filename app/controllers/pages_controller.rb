@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
+  authorize_resource class: PagesController
+
   def home
-    return unless User.find_by(id: session[:user_id])&.admin?
+    return unless logged_in? && admin
 
     flash[:success] = t "index.hello_admin"
     redirect_to admin_path

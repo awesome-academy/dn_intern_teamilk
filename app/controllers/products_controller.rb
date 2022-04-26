@@ -3,6 +3,8 @@ class ProductsController < ApplicationController
                 :list_product_final_custom, only: :index
   before_action :find_product, only: %i(show destroy)
 
+  authorize_resource
+
   def index
     @pagy, @pagy_children_products =
       pagy @children_products, items: Settings.number.digits_6
