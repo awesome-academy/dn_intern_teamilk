@@ -19,6 +19,10 @@
 
       <%= f.submit t(".submit"), class: "btn btn-primary" %>
     <% end %>
+    <button class="btn btn-danger log_with_gg">
+      <%= link_to t(".login_with_gg"), user_google_oauth2_omniauth_authorize_path, method: :post %>
+    </button>
+    <br/>
     <%= render "devise/shared/links" %>
   </div>
 </div>

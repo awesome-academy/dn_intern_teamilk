@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users, skip: [:session, :password, :registration, :confirmation], controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   scope "(:locale)", locale: /en|vi/ do
     root to: "pages#home"
     get "home", to: "pages#home"
@@ -19,7 +20,8 @@ Rails.application.routes.draw do
 
     resources :orders
     get "order/status/:id_status", to: "orders#show_by_status", as: "show_order_by_status"
-    devise_for :users
+
+    devise_for :users, skip: [:omniauth_callbacks]
 
     as :user do
       get "login" => "devise/sessions#new"

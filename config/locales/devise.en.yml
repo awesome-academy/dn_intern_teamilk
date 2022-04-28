@@ -19,12 +19,22 @@ en:
       unauthenticated: "You need to sign in or sign up before continuing."
       unconfirmed: "You have to confirm your email address before continuing."
     mailer:
+      welcome: "Welcome"
       confirmation_instructions:
+        confirm: "Confirm my account"
+        content: "You can confirm your account email through the link below:"
         subject: "Confirmation instructions"
       reset_password_instructions:
+        change_pass: "Change password"
+        didnt_request: "If you didn't request this, please ignore this email"
+        request_change: "Someone has requested a link to change your password. You can do this through the link below"
         subject: "Reset password instructions"
+        wont_change: "Your password won't change until you access the link above and create a new one."
       unlock_instructions:
         subject: "Unlock instructions"
+        account_locked: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+        click_link: "Click the link below to unlock your account:"
+        unlock: "Unlock my account"
       email_changed:
         subject: "Email Changed"
       password_change:
@@ -38,6 +48,11 @@ en:
       send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
       updated: "Your password has been changed successfully. You are now signed in."
       updated_not_active: "Your password has been changed successfully."
+      edit:
+        title: "Change password"
+        min_char: "Min character"
+      new:
+        forgot_pass: "Send me reset password instructions"
     registrations:
       destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
       signed_up: "Welcome! You have signed up successfully."
@@ -73,13 +88,13 @@ en:
         remember_me: "Save password"
         submit: "Sign in"
         title: "Sign in"
-    shared:
-      no_receive_confirmation: "Didn't receive confirmation instructions?"
-      no_receive_unlock: "Didn't receive unlock instructions?"
+        login_with_gg: "Login by google"
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
       unlocked: "Your account has been unlocked successfully. Please sign in to continue."
+      new:
+        title: "Resend unlock instructions"
   errors:
     messages:
       already_confirmed: "was already confirmed, please try signing in"
