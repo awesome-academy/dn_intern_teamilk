@@ -1,6 +1,8 @@
 class Admin::OrdersController < Admin::BaseController
   before_action :find_order_by_id, only: %i(update show)
 
+  authorize_resource class: Admin::OrdersController
+
   def index
     @orders = Order.sort_by_day
   end

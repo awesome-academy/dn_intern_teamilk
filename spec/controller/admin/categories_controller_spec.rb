@@ -10,7 +10,8 @@ RSpec.describe Admin::CategoriesController, type: :controller do
     describe "load default template" do
       before :each do
         @list_product = Product.all
-        get :index, session: {user_id: admin1.id}
+        sign_in admin1
+        get :index
       end
 
       it "load teamplate" do
@@ -25,7 +26,8 @@ RSpec.describe Admin::CategoriesController, type: :controller do
     describe "load search categories" do
       context "when list categories was founded" do
         before :each do
-          get :index, session: {user_id: admin1.id}, params:{name: "Category"}
+          sign_in admin1
+          get :index, params:{name: "Category"}
         end
 
         it "when setting cookies" do
@@ -41,7 +43,8 @@ RSpec.describe Admin::CategoriesController, type: :controller do
       context "when list categories can not find" do
         it "display flag not found" do
           Product.find_each(&:destroy)
-          get :index, session: {user_id: admin1.id}, params:{name: "Category"}
+          sign_in admin1
+          get :index, params:{name: "Category"}
           expect(flash.now[:warning]).to be == I18n.t("admin.not_found")
         end
       end
@@ -50,7 +53,8 @@ RSpec.describe Admin::CategoriesController, type: :controller do
 
   describe "GET #create" do
     it "load teamplate" do
-      get :create, session: {user_id: admin1.id}
+      sign_in admin1
+      get :create
       expect(response).to render_template(:create)
     end
   end

@@ -58,3 +58,4 @@ gem "font-awesome-sass", "~> 4.7"
 gem "rake", "~> 13.0", ">= 13.0.6"
 
 gem "cancancan", "~> 3.3"
+gem "devise"

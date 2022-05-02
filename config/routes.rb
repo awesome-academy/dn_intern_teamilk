@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
     resources :orders
     get "order/status/:id_status", to: "orders#show_by_status", as: "show_order_by_status"
+
+    devise_for :users
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

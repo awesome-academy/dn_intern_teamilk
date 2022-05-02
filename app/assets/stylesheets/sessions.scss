@@ -6,15 +6,15 @@
 // form sign in, sign out
 
 .user_login_class {
-  height: 50vh;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 3% 0 3% 0;
 
   .form_login {
-    margin-top: 10px;
-    position: absolute;
+    display: block;
+
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     width: 50%;
     box-shadow: 0 10px 10px $box-shadow-normal;
     box-sizing: border-box;

@@ -12,15 +12,17 @@ RSpec.describe PagesController, type: :controller do
     describe "when login with User account" do
       it "render home page" do
         user = FactoryBot.create(:user)
-        get(:home, session: {user_id: user.id})
+        sign_in user
+        get :home
         expect(response).to render_template(:home)
       end
     end
 
     describe "when login with admin account" do
       before do
-        @user = FactoryBot.create(:user, role: 1)
-        get(:home, session: {user_id: @user.id})
+        admin = FactoryBot.create(:user, role: 1)
+        sign_in admin
+        get :home
       end
 
       it "display flash welcome admin" do

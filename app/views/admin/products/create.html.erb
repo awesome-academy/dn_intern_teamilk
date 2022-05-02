@@ -1,26 +1,27 @@
+<% provide :title, t("title.new_product") %>
 <%= form_for @product do |f| %>
   <ul class="div_admin_add_products">
     <li><%= render "shared/error_messages", object: f.object %></li>
     <li>
       <div class="field">
-        <%= f.text_area :name, placeholder: "name" %>
+        <%= f.text_area :name, placeholder: t("devise.registration.new.name") %>
       </div>
     </li>
     <li>
       <span class="div_admin_add_products_image">
-        <p id="pls_sel">Select a picture:</p>
+        <p id="pls_sel"><%= t "admin.select_picture" %></p>
         <%= image_tag "", id: "img_prev"%>
         <%= f.file_field :image, accept: t("img_format_html"), class: "div_admin_add_products_image" %>
       </span>
     </li>
     <li>
       <div class="field">
-        <%= f.text_area :description, placeholder: "description" %>
+        <%= f.text_area :description, placeholder: t("admin.description") %>
       </div>
     </li>
     <li>
       <%= f.collection_select :product_id, Product.all.parent_products, :id, :name %>
     </li>
-    <li><%= f.submit "add", class: "site-btn" %></li>
+    <li><%= f.submit t("admin.products.add_new_product"), class: "site-btn" %></li>
   </ul>
 <% end %>

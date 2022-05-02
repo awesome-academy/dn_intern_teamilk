@@ -1,0 +1,44 @@
+<% provide :title, t("title.sign_up") %>
+<div class="user_login_class">
+  <div class="form_login">
+    <h1><%= t "sign_up" %></h1>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field">
+        <%= f.label t("devise.registration.new.name") %>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="field">
+        <%= f.label t("devise.registration.new.phone") %>
+        <%= f.text_field :phone %>
+      </div>
+
+      <div class="field">
+        <%= f.label t("devise.registration.edit.password") %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> <%= t("devise.registration.edit.p3") %>)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password" %>
+      </div>
+
+      <div class="field">
+        <%= f.label t("devise.registration.edit.password_confirm") %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit t "title.sign_up" %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
+
