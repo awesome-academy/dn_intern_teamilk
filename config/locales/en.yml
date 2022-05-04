@@ -1,6 +1,10 @@
 en:
+  access_denied: "Access Denied"
+  access_denied_login: "Không có quyền này. Needs login"
+
   base_title: "TRoA Milk Tea"
   home_text: "Welcome to the group of people willing to sacrifice their waistlines."
+  not_found: "Opps errors!!! Not found"
   header:
     languages: "Languages"
     english: "English"

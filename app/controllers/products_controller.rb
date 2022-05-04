@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  load_and_authorize_resource
+
   before_action :get_parent_products,
                 :list_product_final_custom, only: :index
   before_action :find_product, only: %i(show destroy)
