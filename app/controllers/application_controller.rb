@@ -1,13 +1,23 @@
 class ApplicationController < ActionController::Base
   before_action :set_locale
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
-  include SessionsHelper
   include CartsHelper
   include Pagy::Backend
 
   rescue_from CanCan::AccessDenied do
     flash[:warning] = t "admin_index.can_not_accesss"
     redirect_to root_url
+  end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up,
+                                      keys: [:email, :password])
+    user_params = [:name, :email,
+                   :phone, :password,
+                   :password_confirmation, :remember_me]
+    devise_parameter_sanitizer.permit :sign_up, keys: user_params
+    devise_parameter_sanitizer.permit :account_update, keys: user_params
   end
 
   private
@@ -21,9 +31,8 @@ class ApplicationController < ActionController::Base
   end
 
   def logged_in_user
-    return if logged_in?
+    return if user_signed_in?
 
-    store_location
     flash[:danger] = t "carts.needs_login"
     redirect_to login_url
   end

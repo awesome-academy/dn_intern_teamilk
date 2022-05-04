@@ -1,5 +1,4 @@
 require 'rails_helper'
-include SessionsHelper
 include CartsHelper
 RSpec.describe OrdersController, type: :controller do
   let!(:user) {FactoryBot.create(:user)}
@@ -18,7 +17,7 @@ RSpec.describe OrdersController, type: :controller do
 
     context "when has login" do
       before do
-        log_in user
+        sign_in user
         get :index
       end
 
@@ -36,7 +35,7 @@ RSpec.describe OrdersController, type: :controller do
 
     context "when has login" do
       before do
-        log_in user
+        sign_in user
         get :new
         session[:carts] = {}
       end
@@ -99,13 +98,19 @@ RSpec.describe OrdersController, type: :controller do
     end
 
     context "when has login" do
-      before do
-        log_in user
+      it "check data new_order" do
+        count_flag = Order.count
+        sign_in user
         session[:carts] = {product_detail_1.id => 2, product_detail_2.id => 2, product_detail_3.id => -12}
         post :create, params: {address_id: address.id}
+        expect(count_flag + 1).to be == Order.count
+        expect(assigns(:new_order)).to eq(Order.last)
       end
-      it "check data new_order" do
-        expect(assigns(:new_order)).to eq(current_user.orders.last)
+
+      before do
+        sign_in user
+        session[:carts] = {product_detail_1.id => 2, product_detail_2.id => 2, product_detail_3.id => -12}
+        post :create, params: {address_id: address.id}
       end
 
       it "redirect home pages" do
@@ -121,7 +126,7 @@ RSpec.describe OrdersController, type: :controller do
       before do
         allow_any_instance_of(Order).to receive(:save!).and_raise(ActiveRecord::RecordInvalid)
 
-        log_in user
+        sign_in user
         post :create, params: {address_id: address.id}
         session[:carts] = {product_detail_1.id => 2, product_detail_2.id => 2, product_detail_3.id => -12}
       end
@@ -148,7 +153,7 @@ RSpec.describe OrdersController, type: :controller do
 
     context "when has login" do
       before do
-        log_in user
+        sign_in user
         get :show_by_status, params: {id_status: 2}
       end
 
@@ -174,7 +179,7 @@ RSpec.describe OrdersController, type: :controller do
 
     context "when has login" do
       before do
-        log_in user
+        sign_in user
       end
       context "find order by id" do
         before do
@@ -235,7 +240,7 @@ RSpec.describe OrdersController, type: :controller do
 
     context "when has login" do
       before do
-        log_in user
+        sign_in user
       end
 
       context "find order by id" do

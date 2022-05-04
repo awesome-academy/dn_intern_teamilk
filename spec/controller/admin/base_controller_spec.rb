@@ -9,7 +9,8 @@ RSpec.describe Admin::BaseController, type: :controller do
       describe "when user login" do
         context "user logged in" do
           it "load current_user" do
-            get :index, session: {user_id: user1.id}
+            sign_in user1
+            get :index
             expect(assigns(:current_user)) == user1
           end
         end
@@ -30,14 +31,16 @@ RSpec.describe Admin::BaseController, type: :controller do
       describe "when admin login" do
         context "admin logged" do
           it "check admin role" do
-            get :index, session: {user_id: admin1.id}
+            sign_in admin1
+            get :index
             expect(assigns(:current_user).admin?).to be == true
           end
         end
 
         context "logged but not admin" do
           before :each do
-            get :index, session: {user_id: user1.id}
+            sign_in user1
+            get :index
           end
           it "display flag can not access" do
             expect(flash[:danger]).to be == I18n.t("admin_index.can_not_accesss")

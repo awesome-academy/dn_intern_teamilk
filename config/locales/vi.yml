@@ -1,6 +1,66 @@
 vi:
   base_title: "TRoA Milk Tea"
   home_text: "Chào mừng bạn gia nhập hội những người sẵn sàng hi sinh cái vòng eo."
+  title:
+    home_page: "Trang chủ"
+    new_categories: "Danh mục mới"
+    admin: "Trang quản lý"
+    categories: "Danh mục"
+    orders: "Đơn hàng"
+    order_details: "Chi tiết đơn hàng"
+    new_product: "Món mới"
+    products: "Danh sách món"
+    carts: "Giỏ hàng"
+    resend_confirm: "Gửi lại xác nhận"
+    change_password: "Đổi mật khẩu"
+    edit_information: "Chỉnh sửa thông tin"
+    sign_up: "Đăng kí"
+    log_in: "Đăng nhập"
+    menu: "Menu"
+    forgot_password: "Quên mật khẩu"
+    do_not_recei_comf: "Bạn không nhận được mã xác nhận email?"
+  devise:
+    back: "Trở về"
+    confirmations:
+      index:
+        text1: "Gửi lại mã xác nhận"
+    mailer:
+      comfir:
+        p1: "Chào mừng"
+        p2: "Bạn có thể xác nhận tài khoản của mình qua đường dẫn bên dưới:"
+        p3: "Xác minh tài khoản của tôi"
+      email_change:
+        p1: "Xin chào"
+        p2: "Chúng tôi thông báo với bạn về việc thay đổi email trong hệ thống thành:"
+      pass_change:
+        p1: "Chúng thôi thông báo với bạn răng mật khẩu của bạn đã được thay đổi."
+      pass_reset:
+        p2: "Ai đó đã yêu cầu thay đổi mật khẩu tài khoản của bạn. Bạn có thể thực hiện theo đường đẫn bên dưới"
+        p3: "Thay đổi mật khẩu của tôi"
+        p4: "Nếu như người yêu cầu không phải bạn thì vui lòng bỏ qua tin nhắn này."
+        p5: "Mật khẩu của bạn sẽ không thay đổi cho đến khi bạn truy cập vào đường dẫn trên và tạo ra một cái mới."
+    password:
+      edit:
+        new_pass: "Mật khẩu mới"
+        confirm_new_pass: "Xác nhận mật khẩu mới"
+      new:
+        send_me: "Gửi cho tôi mã thay đổi mật khẩu"
+    registration:
+      edit:
+        p1: "Chỉnh sửa"
+        password: "Mật khẩu"
+        p2: "để trống nó nếu như bạn không muốn thay đổi"
+        p3: "kí tự tối thiểu"
+        password_confirm: "Xác nhận mật khẩu"
+        current_pass: "Mật khẩu hiện tại"
+        p4: "để chắc chắn, chúng tôi muốn xác nhận lại mật khẩu cũ của bạn."
+        update: "Cập nhật"
+      new:
+        name: "Tên"
+        phone: "Điện thoại"
+    session:
+      new:
+        remeber: "Ghi nhớ cho lần sau"
   header:
     languages: "Ngôn ngữ"
     english: "Tiếng Anh"
@@ -109,7 +169,9 @@ vi:
     can_not_accesss: "Bạn không đủ quyền truy cập."
     not_logged_in: "Bạn chưa đăng nhập"
   admin:
+    description: "Mô tả"
     not_found: "Không tìm thấy"
+    select_picture: "Chọn ảnh:"
     products:
       add_new_product: "Thêm sản phẩm"
       category: "Danh mục"
@@ -162,3 +224,4 @@ vi:
       delivered: "Đã giao hàng"
       success: "Thành công"
       rejected: "Hủy đơn"
+

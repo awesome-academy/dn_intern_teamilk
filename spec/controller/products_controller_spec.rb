@@ -190,10 +190,13 @@ RSpec.describe ProductsController, type: :controller do
   end
 
   describe "POST #create" do
+    before :each do
+      sign_in admin
+    end
+
     context "when create product successed" do
       it "display flash successed" do
-        post :create, params: {product: {name: "Test1", description: nil, product_id: nil}},
-                      session: {user_id: admin.id}
+        post :create, params: {product: {name: "Test1", description: nil, product_id: nil}}
         expect(flash[:success]).to be == I18n.t("admin.products.add_success")
       end
 
@@ -251,6 +254,10 @@ RSpec.describe ProductsController, type: :controller do
   end
 
   describe "DELETE #destroy" do
+    before :each do
+      sign_in admin
+    end
+
     context "when delete successed" do
       it "display flash successed" do
         delete :destroy, params: {id: product1.id}, session: {user_id: admin.id}

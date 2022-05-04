@@ -1,17 +1,18 @@
+<% provide :title, t("title.new_categories") %>
 <%= form_for @product do |f| %>
   <ul class="div_admin_add_products">
     <li><%= render "shared/error_messages", object: f.object %></li>
     <li>
       <div class="field">
-        <%= f.text_area :name, placeholder: "name" %>
+        <%= f.text_area :name, placeholder: t("devise.registration.new.name") %>
       </div>
     </li>
     <li>
       <div class="field">
-        <%= f.text_area :description, placeholder: "description" %>
+        <%= f.text_area :description, placeholder: t("admin.description") %>
       </div>
     </li>
     <%= hidden_field_tag :product_id, nil %>
-    <li><%= f.submit "add", class: "site-btn" %></li>
+    <li><%= f.submit t("admin.category.add_new_category"), class: "site-btn" %></li>
   </ul>
 <% end %>

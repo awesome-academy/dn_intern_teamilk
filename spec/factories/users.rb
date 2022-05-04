@@ -6,6 +6,6 @@ FactoryBot.define do
     role {0}
     password {"qwerty"}
     password_confirmation {"qwerty"}
-    activated {true}
+    confirmed_at {Time.now}
   end
 end

@@ -33,14 +33,14 @@
                 <li><%= link_to t("header.vietnamese"), locale:"vi" %></li>
               </ul>
             </div>
-            <% unless logged_in? %>
+            <% unless user_signed_in? %>
               <div class="header__top__right__auth">
-                <%= link_to (login_path) do %>
+                <%= link_to (new_user_session_path) do %>
                   <i class="fa fa-user"></i><%= t "header.login" %>
                 <% end %>
               </div>
             <% else %>
-              <% if admin %>
+              <% if current_user.admin? %>
                 <div class="header__top__right__auth">
                   <%= link_to (admin_path) do %>
                     <i class="fa fa-cog"></i><%= t "header.admin" %>
@@ -69,26 +69,26 @@
       <div class="col-lg-6">
         <nav class="header__menu">
           <ul>
-            <% if logged_in? && admin %>
+            <% if user_signed_in? && current_user.admin? %>
               <li><%= link_to t("header.admin_page"), admin_path %></li>
             <% else %>
               <li><%= link_to t("header.home"), root_path %></li>
               <li><%= link_to t("header.menu"), products_path %></li>
               <li><%= link_to t("header.contact"), root_path %></li>
             <% end %>
-            <% if logged_in? %>
+            <% if user_signed_in? %>
               <li><%= link_to t("header.profiles"), "#" %>
                 <ul class="header__menu__dropdown">
-                  <% unless admin %>
+                  <% unless current_user.admin? %>
                     <li><%= link_to t("header.account_Details"),
-                            root_path %></li>
+                            edit_user_registration_path %></li>
                     <li><%= link_to t("header.shoping_Cart"),
                             cart_path %></li>
                     <li><%= link_to t("header.list_Orders"),
                             orders_path %></li>
                   <% end %>
                   <li><%= link_to t("header.log_out"),
-                          logout_path, method: "delete" %></li>
+                          destroy_user_session_path, :method => :delete %></li>
                 </ul>
               </li>
             <% end %>
@@ -97,5 +97,5 @@
       </div>
     </div>
   </div>
-  <%= render "shared/search" unless logged_in? && admin %>
+  <%= render "shared/search" unless user_signed_in? && current_user.admin? %>
 </header>

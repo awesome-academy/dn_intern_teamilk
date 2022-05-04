@@ -13,7 +13,8 @@ RSpec.describe Admin::ProductsController, type: :controller do
     describe "load default template" do
       before :each do
         @list_product = Product.all
-        get :index, session: {user_id: admin1.id}
+        sign_in admin1
+        get :index
       end
 
       it "load teamplate" do
@@ -32,7 +33,8 @@ RSpec.describe Admin::ProductsController, type: :controller do
     describe "load search product" do
       context "when list products was founded" do
         before :each do
-          get :index, session: {user_id: admin1.id}, params:{name: "Product"}
+          sign_in admin1
+          get :index, params:{name: "Product"}
         end
 
         it "when setting cookies" do
@@ -48,7 +50,8 @@ RSpec.describe Admin::ProductsController, type: :controller do
       context "when list products can not find" do
         it "display flag not found" do
           Product.find_each(&:destroy)
-          get :index, session: {user_id: admin1.id}, params:{name: "Product"}
+          sign_in admin1
+          get :index, params:{name: "Product"}
           expect(flash.now[:warning]).to be == I18n.t("admin.not_found")
         end
       end
@@ -57,7 +60,8 @@ RSpec.describe Admin::ProductsController, type: :controller do
 
   describe "GET #create" do
     it "load teamplate" do
-      get :create, session: {user_id: admin1.id}
+      sign_in admin1
+      get :create
       expect(response).to render_template(:create)
     end
   end

@@ -1,6 +1,66 @@
 en:
   base_title: "TRoA Milk Tea"
   home_text: "Welcome to the group of people willing to sacrifice their waistlines."
+  title:
+    home_page: "Home"
+    new_categories: "New Category"
+    admin: "Admin Page"
+    categories: "Categories"
+    orders: "Orders"
+    order_details: "Order Details"
+    new_product: "New Product"
+    products: "Products"
+    carts: "Carts"
+    resend_confirm: "Resend Confirmation"
+    change_password: "Change password"
+    edit_information: "Edit Information"
+    sign_up: "Sign Up"
+    log_in: "Log In"
+    menu: "Menu"
+    forgot_password: "Forgot Password"
+    do_not_recei_comf: "Didn't receive confirmation instructions?"
+  devise:
+    back: "Back"
+    confirmations:
+      index:
+        text1: "Resend confirmation instructions"
+    mailer:
+      comfir:
+        p1: "Welcome"
+        p2: "You can confirm your account email through the link below:"
+        p3: "Confirm my account"
+      email_change:
+        p1: "Hello"
+        p2: "We're contacting you to notify you that your email is being changed to"
+      pass_change:
+        p1: "We're contacting you to notify you that your password has been changed."
+      pass_reset:
+        p2: "Someone has requested a link to change your password. You can do this through the link below."
+        p3: "Change my password"
+        p4: "If you didn't request this, please ignore this email."
+        p5: "Your password won't change until you access the link above and create a new one."
+    password:
+      edit:
+        new_pass: "New password"
+        confirm_new_pass: "Confirm new password"
+      new:
+        send_me: "Send me reset password instructions"
+    registration:
+      edit:
+        p1: "Edit"
+        password: "Password"
+        p2: "leave blank if you don't want to change it"
+        p3: "characters minimum"
+        password_confirm: "Password Confirmation"
+        current_pass: "Current Password"
+        p4: "we need your current password to confirm your changes"
+        update: "Update"
+      new:
+        name: "Name"
+        phone: "Phone"
+    session:
+      new:
+        remeber: "Remember me"
   header:
     languages: "Languages"
     english: "English"
@@ -109,7 +169,9 @@ en:
     can_not_accesss: "You are not authorized to access."
     not_logged_in: "You are not logged in."
   admin:
+    description: "Description"
     not_found: "Not found"
+    select_picture: "Select a picture:"
     products:
       add_new_product: "Add new product"
       category: "Categoris"
