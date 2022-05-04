@@ -1,6 +1,9 @@
 vi:
+  access_denied: "Không có quyền này"
+  access_denied_login: "Không có quyền này. Hãy đăng nhập trước"
   base_title: "TRoA Milk Tea"
   home_text: "Chào mừng bạn gia nhập hội những người sẵn sàng hi sinh cái vòng eo."
+  not_found: "Opps errors!!! Không tìm thấy"
   header:
     languages: "Ngôn ngữ"
     english: "Tiếng Anh"

@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   include OrdersHelper
-  before_action :logged_in_user
+  # before_action :logged_in_user
+  load_and_authorize_resource
   before_action :find_order_by_id, only: %i(show destroy update)
   before_action :change_status, only: :destroy
 

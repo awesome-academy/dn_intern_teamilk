@@ -7,6 +7,9 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include CartsHelper
 
+  rescue_from CanCan::AccessDenied, with: :access_denied
+  rescue_from ActiveRecord::RecordNotFound, with: :not_found
+
   protected
 
   def configure_permitted_parameters
@@ -23,6 +26,21 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     {locale: I18n.locale}
+  end
+
+  def access_denied
+    if current_user.nil?
+      flash[:danger] = t "access_denied_login"
+      return redirect_to login_path
+    end
+
+    flash[:danger] = t "access_denied"
+    redirect_to root_path
+  end
+
+  def not_found
+    flash[:danger] = t "not_found"
+    redirect_to root_path
   end
 
   include Pagy::Backend
