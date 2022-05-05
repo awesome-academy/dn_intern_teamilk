@@ -30,11 +30,6 @@ RSpec.describe Admin::CategoriesController, type: :controller do
           get :index, params:{name: "Category"}
         end
 
-        it "when setting cookies" do
-          expect(cookies[:id_flag]).to be == "1"
-          expect(cookies[:content_flag]).to be == "Category"
-        end
-
         it "when setting list_product" do
           expect(assigns(:list_product)).to eq([category1,category2])
         end

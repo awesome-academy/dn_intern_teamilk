@@ -150,10 +150,8 @@ vi:
   shared:
     category: "Danh mục"
     sort_by: "Sắp xếp theo"
-    name_a_z: "Tên: A - z"
-    name_z_a: "Tên: z - A"
-    date_lastest: "Ngày: Lastest"
-    date_oldest: "Ngày: Oldest"
+    name_sort: "Xếp theo tên"
+    date_sort: "Xếp theo ngày"
     product_found: "Sản phẩm được tìm thấy"
     what_do_u_need: "Bạn cần gì?"
     search: "Tìm kiếm"

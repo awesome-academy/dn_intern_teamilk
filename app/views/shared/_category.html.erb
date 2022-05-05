@@ -4,8 +4,12 @@
       <h4><%= t "shared.category" %></h4>
       <ul>
         <% @parent_products.each do |parent_product| %>
-          <li><%= link_to parent_product.name,
-                  products_path(parent_id: parent_product.id) %></li>
+          <li>
+            <%= search_form_for @search, url: request.original_url, local: true, method: :get do |f| %>
+              <%= f.hidden_field :product_id_eq, value: parent_product.id %>
+              <h6><%= f.submit parent_product.name, class: "category_side_bar" %></h6>
+            <% end %>
+          </li>
         <% end %>
       </ul>
     </div>

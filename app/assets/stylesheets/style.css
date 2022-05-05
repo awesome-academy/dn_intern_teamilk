@@ -182,6 +182,19 @@ ol {
 	border: none;
 }
 
+.site-btn-ver-admin {
+	font-size: 14px;
+	color: #ffffff !important;
+	font-weight: 800;
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 13px 30px 12px;
+	background: #7fad39;
+	border: none;
+	float: right;
+	max-width: fit-content;
+}
+
 /* Preloder */
 
 #preloder {
@@ -431,7 +444,7 @@ ol {
 	left: 0;
 	top: 50px;
 	background: #222222;
-	width: 180px;
+	width: 220px;
 	z-index: 9;
 	padding: 5px 0;
 	-webkit-transition: all, 0.3s;
@@ -3520,4 +3533,10 @@ ol {
 
 #img_prev {
 	max-width: 250px;
+}
+
+.category_side_bar{
+	border: none;
+	background:none;
+	margin-top: 4%;
 }

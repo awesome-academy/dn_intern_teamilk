@@ -59,3 +59,4 @@ gem "rake", "~> 13.0", ">= 13.0.6"
 
 gem "cancancan", "~> 3.3"
 gem "devise"
+gem "ransack"

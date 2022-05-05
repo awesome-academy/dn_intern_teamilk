@@ -4,10 +4,9 @@
       <div class="col-lg-9">
         <div class="hero__search">
           <div class="hero__search__form">
-            <%= form_tag(products_path, method: :get) do %>
-              <%= text_field_tag :name, nil,
-                                 placeholder: search_text %>
-              <%= button_tag t("shared.search"), class: "site-btn" %>
+            <%= search_form_for @search, url: products_path, local: true, method: :get do |f| %>
+              <%= f.search_field :name_cont, placeholder: search_text %>
+              <%= f.submit t("shared.search"), class: "site-btn-ver-admin" %>
             <% end %>
           </div>
         </div>
