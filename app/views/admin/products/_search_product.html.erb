@@ -7,11 +7,7 @@
       <%= button_to t("admin.products.add_new_product"), admin_products_path, method: :post, class: "site-btn" %>
     </div>
     <div class="hero__search__form">
-      <%= form_tag(admin_products_path, method: :get) do %>
-        <%= text_field_tag :name, nil,
-                                  placeholder: search_text %>
-        <%= button_tag t("shared.search"), class: "site-btn" %>
-      <% end %>
+      <%= render "admin/shared/search" %>
     </div>
   </div>
 </div>

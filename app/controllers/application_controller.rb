@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :set_locale
+  before_action :set_locale, :search
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   include CartsHelper
@@ -21,6 +21,10 @@ class ApplicationController < ActionController::Base
   end
 
   private
+  def search
+    @search = Product.ransack params[:q]
+    @children_products = @search.result.children_products
+  end
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale

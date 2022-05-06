@@ -34,12 +34,7 @@ RSpec.describe Admin::ProductsController, type: :controller do
       context "when list products was founded" do
         before :each do
           sign_in admin1
-          get :index, params:{name: "Product"}
-        end
-
-        it "when setting cookies" do
-          expect(cookies[:id_flag]).to be == "1"
-          expect(cookies[:content_flag]).to be == "Product"
+          get :index, params:{q:{"name_cont"=>"Product"}}
         end
 
         it "when setting list_product" do

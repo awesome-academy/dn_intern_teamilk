@@ -150,10 +150,8 @@ en:
   shared:
     category: "Category"
     sort_by: "Sort By"
-    name_a_z: "Name: A - z"
-    name_z_a: "Name: z - A"
-    date_lastest: "Date: Lastest"
-    date_oldest: "Date: Oldest"
+    name_sort: "Sort by Name"
+    date_sort: "Sort by Date"
     product_found: "Product found"
     what_do_u_need: "What do you need?"
     search: "Search"
