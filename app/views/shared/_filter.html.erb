@@ -14,14 +14,12 @@
                           <ul>
                             <li><h5><%= link_to t("shared.sort_by"), "#" %></h5>
                               <ul class="header__menu__dropdown">
-                                <li><%= link_to t("shared.name_a_z"),
-                                        products_path(sort_id: 1) %></li>
-                                <li><%= link_to t("shared.name_z_a"),
-                                        products_path(sort_id: 2) %></li>
-                                <li><%= link_to t("shared.date_lastest"),
-                                        products_path(sort_id: 3) %></li>
-                                <li><%= link_to t("shared.date_oldest"),
-                                        products_path(sort_id: 4) %></li>
+                                <li>
+                                  <%= sort_link(@q, :name, t("shared.sort_by_name")) %>
+                                </li>
+                                <li>
+                                  <%= sort_link(@q, :updated_at, t("shared.sort_by_date")) %>
+                                </li>
                               </ul>
                             </li>
                             <li>

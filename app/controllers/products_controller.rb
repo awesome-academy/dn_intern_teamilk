@@ -1,11 +1,13 @@
 class ProductsController < ApplicationController
   load_and_authorize_resource
 
-  before_action :get_parent_products,
-                :list_product_final_custom, only: :index
+  before_action :get_parent_products, only: :index
   before_action :find_product, only: %i(show destroy)
 
   def index
+    @q = Product.ransack(params[:q])
+    @children_products = @q.result(distinct: true).children_products
+
     @pagy, @pagy_children_products =
       pagy @children_products, items: Settings.number.digits_6
   end
@@ -60,75 +62,10 @@ class ProductsController < ApplicationController
   end
 
   def get_parent_products
-    @parent_products = Product.parent_products
+    @parent_products = Product.ransack(product_id_null: true).result
     return unless @parent_products.empty?
 
     flash[:danger] = t "product.parent_product_not_found"
     redirect_to root_path
-  end
-
-  def list_product_final_custom
-    if params[:sort_id]
-      get_list_product_by_cookies
-      list_product_after_filter
-    else
-      get_list_product_by_params
-    end
-    return unless @children_products.empty?
-
-    flash.now[:danger] = t "product.children_product_not_found"
-  end
-
-  # =========================================================
-  def get_children_product_by_name search_name
-    @children_products = Product.search_product_by_name(search_name)
-                                .children_products
-    cookies[:id_flag] = 1
-    cookies[:content_flag] = search_name
-  end
-
-  def get_children_product_by_parent_id parent_id
-    @children_products = Product.search_product_by_parent_id(parent_id)
-                                .children_products
-    cookies[:id_flag] = 2
-    cookies[:content_flag] = parent_id
-  end
-
-  def get_all_children_product
-    @children_products = Product.children_products
-    cookies.delete :id_flag
-    cookies.delete :content_flag
-  end
-
-  def get_list_product_by_params
-    if params[:name]
-      get_children_product_by_name params[:name]
-    elsif params[:parent_id]
-      get_children_product_by_parent_id params[:parent_id]
-    else
-      get_all_children_product
-    end
-  end
-
-  def get_list_product_by_cookies
-    if cookies[:id_flag] == "1"
-      get_children_product_by_name cookies[:content_flag]
-    elsif cookies[:id_flag] == "2"
-      get_children_product_by_parent_id cookies[:content_flag]
-    else
-      get_all_children_product
-    end
-  end
-
-  def list_product_after_filter
-    @children_products = if params[:sort_id] == "1"
-                           @children_products.order(:name)
-                         elsif params[:sort_id] == "2"
-                           @children_products.order(name: :desc)
-                         elsif params[:sort_id] == "3"
-                           @children_products.order(:updated_at)
-                         elsif params[:sort_id] == "4"
-                           @children_products.order(updated_at: :desc)
-                         end
   end
 end

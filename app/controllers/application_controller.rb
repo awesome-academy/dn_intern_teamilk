@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :set_locale
+  before_action :set_search
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   include SessionsHelper
@@ -41,6 +42,10 @@ class ApplicationController < ActionController::Base
   def not_found
     flash[:danger] = t "not_found"
     redirect_to root_path
+  end
+
+  def set_search
+    @q = Product.ransack(params[:q])
   end
 
   include Pagy::Backend

@@ -94,10 +94,8 @@ en:
   shared:
     category: "Category"
     sort_by: "Sort By"
-    name_a_z: "Name: A - z"
-    name_z_a: "Name: z - A"
-    date_lastest: "Date: Lastest"
-    date_oldest: "Date: Oldest"
+    sort_by_name: "Name"
+    sort_by_date: "Date"
     product_found: "Product found"
     what_do_u_need: "What do you need?"
     search: "Search"
@@ -138,6 +136,7 @@ en:
       add_address: "Add address"
       no_proc_in_cart: "There are no products in the cart, go buy it bro!"
       status_order: "Status Order"
+      no_address: "Have not address, please enter your address"
     create:
       success_order: "Successful order"
       has_err: "Failed, an error occurred"

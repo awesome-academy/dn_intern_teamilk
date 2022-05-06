@@ -4,6 +4,7 @@ class OrdersController < ApplicationController
   load_and_authorize_resource
   before_action :find_order_by_id, only: %i(show destroy update)
   before_action :change_status, only: :destroy
+  before_action :check_valid_address, only: :new
 
   def index
     @pagy, @orders = pagy Order.list_orders_of_user(current_user.id)
@@ -12,7 +13,6 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @default_address = current_user.addresses.first
     @products = {}
 
     if cart_current.empty?
@@ -106,5 +106,13 @@ class OrdersController < ApplicationController
   rescue NoMethodError
     flash[:danger] = t ".has_err"
     redirect_to orders_url
+  end
+
+  def check_valid_address
+    @default_address = current_user.addresses.first
+    return unless @default_address.nil?
+
+    flash[:danger] = t ".no_address"
+    redirect_to cart_url
   end
 end
