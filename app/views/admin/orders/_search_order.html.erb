@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="hero__search">
+    <div class="hero__search__form">
+      <%= search_form_for @q, url: admin_orders_path, method: :GET do |f| %>
+        <%= f.search_field :address_name_or_order_details_product_detail_product_name_cont, placeholder: search_text %>
+        <%= f.submit t("shared.search"), class: "site-btn btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -23,6 +23,7 @@ gem "pagy"
 gem "puma", "~> 5.0"
 gem "rails", "~> 6.1.4", ">= 6.1.4.6"
 gem "rails-i18n", "~> 6.0"
+gem "ransack"
 gem "sass-rails", ">= 6"
 gem "turbolinks", "~> 5"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]

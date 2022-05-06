@@ -8,7 +8,7 @@ class Ability
 
     return if user.nil?
 
-    can [:read,:update], User, id: user.id
+    can [:read, :update], User, id: user.id
     can :manage, Review, user_id: user.id
     can :manage, Address, user_id: user.id
     can :manage, [Order, OrderDetail], user_id: user.id

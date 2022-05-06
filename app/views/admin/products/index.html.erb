@@ -6,7 +6,9 @@
         <table>
           <thead>
             <tr>
-              <th class="shoping__product"><%= t "carts.index.product_name" %></th>
+              <th class="shoping__product">
+                <%= sort_link(@q, :name, t("carts.index.product_name")) %>
+              </th>
               <th class="table_center_row"><%= t "admin.products.edit" %></th>
               <th class="table_center_row"><%= t "admin.products.change_size" %></th>
               <th class="table_center_row"><%= t "admin.products.delete" %></th>

@@ -93,10 +93,8 @@ vi:
   shared:
     category: "Danh mục"
     sort_by: "Sắp xếp theo"
-    name_a_z: "Tên: A - z"
-    name_z_a: "Tên: z - A"
-    date_lastest: "Ngày: Lastest"
-    date_oldest: "Ngày: Oldest"
+    sort_by_name: "Tên"
+    sort_by_date: "Ngày"
     product_found: "Sản phẩm được tìm thấy"
     what_do_u_need: "Bạn cần gì?"
     search: "Tìm kiếm"
@@ -137,6 +135,7 @@ vi:
       add_address: "Thêm địa chỉ"
       no_proc_in_cart: "Không có sản phẩm nào trong giỏ hàng, mua đi bro!"
       status_order: "Trạng thái đơn hàng"
+      no_address: "Chưa có địa chỉ giao hàng, vui lòng thêm trước khi mua"
     create:
       success_order: "Đặt hàng thành công"
       has_err: "Không thành công, có lỗi xảy ra"
