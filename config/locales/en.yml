@@ -100,6 +100,7 @@ en:
     what_do_u_need: "What do you need?"
     search: "Search"
     are_u_sure: "Are you sure?"
+    change_status_mailer: "Your order has been changed: "
   admin_index:
     welcome: "Welcome home, Master!"
     menu: "Menu"
