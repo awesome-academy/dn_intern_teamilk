@@ -16,6 +16,7 @@ class Admin::OrdersController < Admin::BaseController
       ActiveRecord::Base.transaction do
         @order.update!(params_update_order)
       end
+      send_email_change_status @order
       flash[:success] = t "orders.create.chage_order_success"
     else
       flash[:danger] = t "orders.create.has_errss"
@@ -44,5 +45,10 @@ class Admin::OrdersController < Admin::BaseController
 
     flash[:danger] = t("carts.create.not_found_product")
     redirect_to admin_orders_path
+  end
+
+  def send_email_change_status order
+    SendEmailChangeStatusOrderJob.set(wait: Settings.number.digits_1.minutes)
+                                 .perform_later order
   end
 end

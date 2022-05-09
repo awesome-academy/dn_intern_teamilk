@@ -3,6 +3,7 @@ class Order < ApplicationRecord
   belongs_to :address
 
   delegate :name, to: :address, prefix: :address
+  delegate :email, to: :user, prefix: :user
 
   has_many :order_details, dependent: :destroy
 
